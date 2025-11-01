@@ -1,489 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earlington Legacy Initiative NPC Formation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <!-- Chosen Palette: Calm Harmony with expanded accents -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fdfcf9;
-            color: #3f3c3a;
-        }
-        .nav-link {
-            @apply px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-teal-50 hover:text-teal-700 transition-colors;
-        }
-        .nav-link-active {
-            @apply bg-gray-900 text-white;
-        }
-        /* Custom card styling with enhanced hover for Strategic Pillars */
-        .card {
-            @apply bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:translate-y-[-4px];
-        }
-        .card-content {
-            @apply p-6;
-        }
-        .card-details {
-            @apply max-h-0 overflow-hidden transition-all duration-500 ease-in-out;
-        }
-        .card.active .card-details {
-            @apply max-h-96 pt-4 border-t border-teal-100;
-        }
-        /* Executive Card Styles */
-        .executive-card-vc { @apply border-t-4 border-indigo-500 bg-white shadow-lg p-6 rounded-xl transition-all hover:shadow-xl hover:translate-y-[-2px]; }
-        .executive-card-treasurer { @apply border-t-4 border-emerald-500 bg-white shadow-lg p-6 rounded-xl transition-all hover:shadow-xl hover:translate-y-[-2px]; }
-        .executive-card-secretary { @apply border-t-4 border-blue-500 bg-white shadow-lg p-6 rounded-xl transition-all hover:shadow-xl hover:translate-y-[-2px]; }
-        .director-badge { @apply inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800; }
-    </style>
-</head>
-<body class="antialiased">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Earlington Legacy Initiative (ELI) — NPO Launch & Board Nominations</title>
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex h-20 items-center justify-between">
-                <div class="flex-shrink-0">
-                    <span class="text-2xl font-extrabold text-teal-600">ELI<span class="text-gray-900 font-medium text-lg ml-1">NPC</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <div classs="ml-10 flex items-baseline space-x-4">
-                        <a href="#vision" class="nav-link">Executive Summary</a>
-                        <a href="#mission" class="nav-link">Core Mission</a>
-                        <a href="#governance" class="nav-link">Board Structure</a>
-                        <a href="#join" class="nav-link">Nominations</a>
-                    </div>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:bg-gray-200 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#vision" class="block nav-link">Executive Summary</a>
-                <a href="#mission" class="block nav-link">Core Mission</a>
-                <a href="#governance" class="block nav-link">Board Structure</a>
-                <a href="#join" class="block nav-link">Nominations</a>
-            </div>
+  <!-- SEO Optimization -->
+  <meta name="description" content="Official announcement of the Earlington Legacy Initiative (ELI) NPO launch and opening of applications for 8 strategic Director positions. Define purpose, inspire legacy.">
+  <meta name="keywords" content="Earlington Legacy Initiative, ELI, NPO, NPC, Board of Directors, Nomination, Purpose, Legacy, Education, Community">
+
+  <!-- Open Graph Meta (Social Sharing) -->
+  <meta property="og:title" content="Earlington Legacy Initiative (ELI) NPO Launch & Board Nominations Now Open">
+  <meta property="og:description" content="Join the launch of the Earlington Legacy Initiative (ELI) Non-Profit Company and apply for 8 open Director positions. Help shape the future of purpose-driven education and community impact.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/earlington-legacy-initiative/">
+  <meta property="og:image" content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Earlington Legacy Initiative (ELI) — NPO Launch & Board Nominations">
+  <meta name="twitter:description" content="Join the ELI NPO launch and apply for one of 8 open Board Director positions.">
+  <meta name="twitter:image" content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+    .eli-primary { background-color: #4f46e5; }
+    .eli-accent { color: #f59e0b; }
+    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .glow-pulse {
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+      animation: pulse-glow 2s infinite;
+    }
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+  </style>
+</head>
+
+<body class="p-4 md:p-10 min-h-screen">
+  <div id="top" class="w-full max-w-6xl mx-auto space-y-12">
+    <!-- HEADER -->
+    <header class="p-8 bg-white rounded-2xl shadow-xl border-t-8 border-indigo-600">
+      <div class="flex justify-between items-center mb-6">
+        <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png"
+             alt="Earlington Legacy Initiative Logo"
+             class="h-20 w-auto object-contain"
+             onerror="this.onerror=null; this.src='https://placehold.co/200x60/1e3a8a/ffffff?text=ELI+Logo';">
+        <div>
+          <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg mr-2">NEW NPO</span>
+          <span class="inline-block bg-amber-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">LAUNCHING SOON</span>
         </div>
+      </div>
+
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Earlington Legacy Initiative</h1>
+        <h2 class="mt-4 text-3xl font-semibold text-gray-700">Call for Board of Directors Nominations</h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Join us in formalizing the <strong>Earlington Legacy Initiative (ELI) as a Non-Profit Company (NPC)</strong>.
+          We are seeking passionate, visionary leaders to complete our founding Board.
+        </p>
+
+        <div class="mt-8 flex justify-center space-x-4">
+          <a href="#open-positions" aria-label="View open Director positions"
+             class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+             View Open Director Positions
+          </a>
+          <a href="#contact" aria-label="Contact for nomination"
+             class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
+             Contact for Nomination
+          </a>
+        </div>
+      </div>
     </header>
 
-    <main>
-        <!-- 1. Hero Section - Enhanced with Gradient, Stats, and Dual CTAs -->
-        <section id="vision" class="py-20 md:py-32 bg-gradient-to-br from-white to-teal-50/50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-                <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl md:text-7xl leading-tight">
-                    <span class="block text-gray-700">The Power of Legacy</span>
-                    <span class="block text-teal-600 mt-2">Earlington Legacy Initiative NPC</span>
-                </h1>
-                <p class="mt-8 max-w-3xl mx-auto text-xl text-gray-600 sm:text-2xl font-light">
-                    The **Earlington Legacy Initiative** is being established as a dedicated **Non-Profit Company (NPC)** to formalize and scale the support for Earlington Secondary School. This legal structure ensures **sustained funding, financial integrity, and eligibility for donor tax incentives (PBO status)**.
-                </p>
+    <!-- STATS -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600">9</p>
+        <p class="mt-2 text-lg font-medium text-gray-700">Total Director Board Size</p>
+      </div>
+      <div class="card bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+        <p class="text-5xl font-extrabold text-indigo-600">4</p>
+        <p class="mt-2 text-lg font-medium text-gray-700">Strategic Pillars of Impact</p>
+      </div>
+      <div class="card bg-amber-50 p-6 rounded-xl shadow-md border-2 border-amber-300 text-center">
+        <p class="text-5xl font-extrabold text-amber-600">8</p>
+        <p class="mt-2 text-lg font-medium text-amber-800">Positions Open for Nomination</p>
+      </div>
+    </section>
 
-                <!-- Key Statistics Cards -->
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-teal-500">
-                        <p class="text-5xl font-extrabold text-teal-600">9</p>
-                        <p class="text-sm font-medium text-gray-600 mt-2">Skills-Based Directors</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-teal-500">
-                        <p class="text-5xl font-extrabold text-teal-600">4</p>
-                        <p class="text-sm font-medium text-gray-600 mt-2">Strategic Mission Pillars</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-teal-500">
-                        <p class="text-5xl font-extrabold text-teal-600">7</p>
-                        <p class="text-sm font-medium text-gray-600 mt-2">Open Director Positions</p>
-                    </div>
-                </div>
-
-                <!-- Dual CTA Buttons -->
-                <div class="mt-12 max-w-lg mx-auto sm:flex sm:justify-center md:mt-16 space-y-4 sm:space-y-0 sm:space-x-6">
-                    <div class="rounded-md shadow">
-                        <a href="#mission" class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-white bg-teal-600 hover:bg-teal-700 md:text-lg md:px-10 transition-colors">
-                            Explore Mission Pillars
-                        </a>
-                    </div>
-                    <div class="rounded-md shadow-md">
-                        <a href="#join" class="w-full flex items-center justify-center px-8 py-4 border border-teal-600 text-base font-bold rounded-xl text-teal-600 bg-white hover:bg-teal-50 md:text-lg md:px-10 transition-colors">
-                            Nominate a Director
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Strategic Pillars - Enhanced with Icons and Unique Colors -->
-        <section id="mission" class="py-20 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Strategic Pillars</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                        The core mission is driven by four strategic, high-impact programs designed to address fundamental gaps in welfare and opportunity. Click on each card to learn more.
-                    </p>
-                </div>
-
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="mission-cards">
-                    <!-- Pillar 1: Fund School Needs (Teal) -->
-                    <div class="card group" data-card-id="1">
-                        <div class="card-content">
-                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-100 text-teal-600 transition-transform duration-300 group-hover:scale-110">
-                                <!-- Icon: Gear -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1 1.51H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09z"></path></svg>
-                            </div>
-                            <h3 class="mt-4 text-xl font-bold text-gray-900">Fund School Needs</h3>
-                            <p class="text-sm text-teal-600 font-medium">Infrastructure & Technology</p>
-                            <div class="card-details">
-                                <p class="mt-2 text-gray-600">Fund strategic infrastructure projects, technological upgrades, and educational resources identified and formally validated by the School Governing Body (SGB).</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Pillar 2: Create Bursary Schemes (Blue) -->
-                    <div class="card group" data-card-id="2">
-                        <div class="card-content">
-                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 transition-transform duration-300 group-hover:scale-110">
-                                <!-- Icon: Graduation Cap -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 17l10 5 10-5M2 12l10 5 10-5M2 7l10 5 10-5"></path><path d="M12 2l10 5-10 5-10-5L12 2z"></path></svg>
-                            </div>
-                            <h3 class="mt-4 text-xl font-bold text-gray-900">Create Bursary Schemes</h3>
-                            <p class="text-sm text-blue-600 font-medium">Tertiary Education Access</p>
-                            <div class="card-details">
-                                <p class="mt-2 text-gray-600">Establish and administer sustainable bursary and scholarship schemes for academically talented and deserving students to pursue tertiary education.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pillar 3: Assist Needy Students (Purple) -->
-                    <div class="card group" data-card-id="3">
-                        <div class="card-content">
-                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-purple-100 text-purple-600 transition-transform duration-300 group-hover:scale-110">
-                                <!-- Icon: Heart/Hand -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                            </div>
-                            <h3 class="mt-4 text-xl font-bold text-gray-900">Assist Needy Students</h3>
-                            <p class="text-sm text-purple-600 font-medium">Essential Support & Welfare</p>
-                            <div class="card-details">
-                                <p class="mt-2 text-gray-600">Provide essential support and interventions to remove financial barriers to education for vulnerable students, including uniforms, stationary, and academic aid.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pillar 4: Develop Feeding Schemes (Amber) -->
-                    <div class="card group" data-card-id="4">
-                        <div class="card-content">
-                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600 transition-transform duration-300 group-hover:scale-110">
-                                <!-- Icon: Apple/Food -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 12A6 6 0 0 1 8 6h8a6 6 0 0 1 6 6v2a6 6 0 0 1-6 6H8a6 6 0 0 1-6-6z"></path><path d="M10 12h.01"></path></svg>
-                            </div>
-                            <h3 class="mt-4 text-xl font-bold text-gray-900">Develop Feeding Schemes</h3>
-                            <p class="text-sm text-amber-600 font-medium">Nutrition & Concentration</p>
-                            <div class="card-details">
-                                <p class="mt-2 text-gray-600">Fund and oversee programs to ensure students from disadvantaged backgrounds receive adequate nutrition, thereby improving concentration and attendance.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Board Governance - Enhanced with Color Coding and Badges -->
-        <section id="governance" class="py-20 md:py-24 bg-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Founding Governance: The Nine-Director Board</h2>
-                    <p class="mt-4 max-w-4xl mx-auto text-lg text-gray-600">
-                        The Initiative will be governed by a structured nine-director, skills-based Board. This hierarchy ensures strong financial integrity and strategic mission delivery across all statutory and programmatic functions.
-                    </p>
-                </div>
-                
-                <!-- 1. CHAIRMAN / FOUNDER - Upgraded Card -->
-                <h3 class="mt-16 text-2xl font-bold tracking-tight text-gray-900 text-center">Founder & Chairman (Vision & Governance)</h3>
-                <div class="mt-6 max-w-lg mx-auto">
-                    <div class="bg-white rounded-xl shadow-2xl p-8 border-t-8 border-teal-600 flex flex-col items-center text-center">
-                        <div class="relative">
-                            <img class="h-32 w-32 rounded-full object-cover mb-4 shadow-xl ring-4 ring-teal-200" 
-                                src="https://res.cloudinary.com/drj03twbh/image/upload/v1761749620/Timothy%20Padayachee.png" 
-                                alt="Timothy Padayachee - NPO Founder Photo" 
-                                onerror="this.onerror=null; this.src='https://placehold.co/128x128/10b981/ffffff?text=T.P.';"
-                            >
-                        </div>
-                        <p class="mt-2 text-3xl font-extrabold text-gray-800">Timothy Padayachee</p>
-                        <h4 class="text-xl font-semibold text-teal-700">Founder & Chairman</h4>
-                        <p class="text-sm text-gray-600 mt-2 italic max-w-sm">Core Responsibility: Vision, Strategy, and Governance. Serves as the primary external face and legal representative.</p>
-                        <div class="mt-6 pt-4 border-t border-gray-200 space-y-2 text-gray-600 text-sm w-full">
-                            <p class="flex items-center justify-center"><i data-feather="mail" class="w-4 h-4 mr-2 text-teal-600"></i><span class="font-medium text-gray-700">Email:</span> <a href="mailto:timothy@hashlytics.co.za" class="hover:underline ml-1">timothy@hashlytics.co.za</a></p>
-                            <p class="flex items-center justify-center"><i data-feather="phone" class="w-4 h-4 mr-2 text-teal-600"></i><span class="font-medium text-gray-700">Mobile:</span> +27 83 657 3397</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. EXECUTIVE OFFICERS - Color-coded and Enhanced -->
-                <h3 class="mt-16 text-2xl font-bold tracking-tight text-gray-900 text-center">Executive Officers (Statutory Compliance & Operations)</h3>
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    
-                    <!-- VICE-CHAIRPERSON (Indigo) -->
-                    <div class="executive-card-vc">
-                        <h4 class="text-xl font-semibold text-indigo-700 flex items-center">
-                            <i data-feather="users" class="w-5 h-5 mr-2"></i>Vice-Chairperson
-                        </h4>
-                        <p class="mt-2 director-badge">Open Position</p>
-                        <p class="mt-3 text-gray-700 font-medium text-sm">Function:</p>
-                        <p class="mt-1 text-sm text-gray-600">Succession planning, internal board management, conflict resolution, and deputizing for the Chairman across all duties.</p>
-                        <a href="#join" class="mt-4 inline-flex items-center text-indigo-600 text-sm font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-
-                    <!-- TREASURER (Emerald) -->
-                    <div class="executive-card-treasurer">
-                        <h4 class="text-xl font-semibold text-emerald-700 flex items-center">
-                            <i data-feather="dollar-sign" class="w-5 h-5 mr-2"></i>Treasurer
-                        </h4>
-                        <p class="mt-2 director-badge">Open Position</p>
-                        <p class="mt-3 text-gray-700 font-medium text-sm">Function:</p>
-                        <p class="mt-1 text-sm text-gray-600">Fiduciary oversight, financial compliance, maintenance of bank accounts, budget control, and ensuring readiness for SARS PBO audits.</p>
-                        <a href="#join" class="mt-4 inline-flex items-center text-emerald-600 text-sm font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-                    
-                    <!-- SECRETARY (Blue) -->
-                    <div class="executive-card-secretary">
-                        <h4 class="text-xl font-semibold text-blue-700 flex items-center">
-                            <i data-feather="clipboard" class="w-5 h-5 mr-2"></i>Secretary
-                        </h4>
-                        <p class="mt-2 director-badge">Open Position</p>
-                        <p class="mt-3 text-gray-700 font-medium text-sm">Function:</p>
-                        <p class="mt-1 text-sm text-gray-600">Legal administration, CIPC/NPO compliance filings, board meeting minute taking, and maintenance of all statutory records and registers.</p>
-                        <a href="#join" class="mt-4 inline-flex items-center text-blue-600 text-sm font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-                </div>
-                
-                <!-- 3. STRATEGIC & NON-EXECUTIVE DIRECTORS -->
-                <h3 class="mt-16 text-2xl font-bold tracking-tight text-gray-900 text-center">Strategic & Non-Executive Directors (Mission Delivery & Oversight)</h3>
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-6xl mx-auto">
-                    
-                    <!-- FUNDRAISING -->
-                    <div class="bg-white rounded-xl shadow-md p-5 border-l-4 border-teal-400 xl:col-span-1">
-                        <h4 class="text-lg font-semibold text-gray-900 flex items-center"><i data-feather="trending-up" class="w-4 h-4 mr-2"></i>Fundraising Director</h4>
-                        <p class="mt-1 director-badge">Open Position</p>
-                        <p class="mt-3 text-sm text-gray-600">Develops and executes resource mobilization strategies, including grant applications, corporate sponsorships, and public campaigns.</p>
-                        <a href="#join" class="mt-3 inline-flex items-center text-teal-600 text-xs font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-3 h-3 ml-1"></i></a>
-                    </div>
-
-                    <!-- SCHOOL LIAISON -->
-                    <div class="bg-white rounded-xl shadow-md p-5 border-l-4 border-teal-400 xl:col-span-1">
-                        <h4 class="text-lg font-semibold text-gray-900 flex items-center"><i data-feather="link" class="w-4 h-4 mr-2"></i>School Liaison Director</h4>
-                        <p class="mt-1 director-badge">Open Position</p>
-                        <p class="mt-3 text-sm text-gray-600">Acts as the official bridge between the NPC Board and the Earlington Secondary School Governing Body (SGB) and Principal.</p>
-                        <a href="#join" class="mt-3 inline-flex items-center text-teal-600 text-xs font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-3 h-3 ml-1"></i></a>
-                    </div>
-                    
-                    <!-- PROGRAMME / M&E -->
-                    <div class="bg-white rounded-xl shadow-md p-5 border-l-4 border-teal-400 xl:col-span-1">
-                        <h4 class="text-lg font-semibold text-gray-900 flex items-center"><i data-feather="bar-chart-2" class="w-4 h-4 mr-2"></i>Programme & Impact Director</h4>
-                        <p class="mt-1 director-badge">Open Position</p>
-                        <p class="mt-3 text-sm text-gray-600">Responsible for monitoring, evaluation, and reporting on the success and impact of all four core strategic pillars.</p>
-                        <a href="#join" class="mt-3 inline-flex items-center text-teal-600 text-xs font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-3 h-3 ml-1"></i></a>
-                    </div>
-                    
-                    <!-- NED - LEGAL -->
-                    <div class="bg-white rounded-xl shadow-md p-5 border-l-4 border-gray-400 xl:col-span-1">
-                        <h4 class="text-lg font-semibold text-gray-900 flex items-center"><i data-feather="gavel" class="w-4 h-4 mr-2"></i>NED - Legal / Governance</h4>
-                        <p class="mt-1 director-badge">Open Position</p>
-                        <p class="mt-3 text-sm text-gray-600">Provides independent oversight on legal compliance, corporate governance matters, and mitigation of legal risk exposure.</p>
-                        <a href="#join" class="mt-3 inline-flex items-center text-teal-600 text-xs font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-3 h-3 ml-1"></i></a>
-                    </div>
-                    
-                    <!-- NED - AUDIT -->
-                    <div class="bg-white rounded-xl shadow-md p-5 border-l-4 border-gray-400 xl:col-span-1">
-                        <h4 class="text-lg font-semibold text-gray-900 flex items-center"><i data-feather="shield-check" class="w-4 h-4 mr-2"></i>NED - Audit / Finance</h4>
-                        <p class="mt-1 director-badge">Open Position</p>
-                        <p class="mt-3 text-sm text-gray-600">Provides independent oversight of the audit process, financial reporting quality, and internal control frameworks.</p>
-                        <a href="#join" class="mt-3 inline-flex items-center text-teal-600 text-xs font-medium hover:underline transition-colors">Nominate Now <i data-feather="arrow-right" class="w-3 h-3 ml-1"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Nominations Section - Two-Column Layout with Call to Action -->
-        <section id="join" class="py-20 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Director Nominations & Support</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-                        The founding board is being constituted to ensure a range of skills and independence. We are actively seeking nominations for seven open director positions.
-                    </p>
-                </div>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <!-- Left Column: Call for Nominations List -->
-                    <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-teal-600">
-                        <h3 class="text-2xl font-semibold text-gray-900">Required Areas of Expertise</h3>
-                        <p class="mt-4 text-gray-700">
-                            We are seeking dedicated individuals with professional expertise in the following areas to fill the seven open Executive, Strategic, and Non-Executive Director roles:
-                        </p>
-                        <ul class="space-y-4 text-gray-600 mt-6">
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <p>
-                                    <span class="font-bold text-gray-800">Finance & Audit Oversight:</span> Essential for the Treasurer role and the Non-Executive Director focusing on financial compliance and reporting.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <p>
-                                    <span class="font-bold text-gray-800">Legal & Governance:</span> Required for the Secretary role, ensuring adherence to the MOI, NPO Act, and Companies Act.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <p>
-                                    <span class="font-bold text-gray-800">Fundraising & Resource Mobilization:</span> Driving grant applications, corporate partnerships, and public campaigns to secure the Initiative's funding.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <p>
-                                    <span class="font-bold text-gray-800">Programme & Project Evaluation (M&E):</span> Ensuring impact measurement and accountability for the four strategic mission pillars.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-feather="check-circle" class="w-5 h-5 text-emerald-500 mr-3 mt-1 flex-shrink-0"></i>
-                                <p>
-                                    <span class="font-bold text-gray-800">Educational Liaison / SGB Experience:</span> Providing a direct link and understanding of the school's operational needs and dynamics.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Right Column: Enhanced Contact Card -->
-                    <div class="bg-gradient-to-tr from-teal-500 to-teal-600 rounded-xl shadow-xl p-8 text-white flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-3xl font-extrabold mb-3">Submit Your Nomination</h3>
-                            <p class="text-teal-100 font-light">
-                                For all initial correspondence, nomination submissions (including CV and cover letter), or questions regarding the formation plan, please contact the Founder directly:
-                            </p>
-                            <div class="mt-6 space-y-3">
-                                <div class="flex items-center">
-                                    <i data-feather="user" class="w-5 h-5 mr-3"></i>
-                                    <p class="font-semibold">Timothy Padayachee (Founder & Chairman)</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-feather="mail" class="w-5 h-5 mr-3"></i>
-                                    <p class="text-sm"><a href="mailto:timothy@hashlytics.co.za" class="hover:underline">timothy@hashlytics.co.za</a></p>
-                                </div>
-                                <div class="flex items-center">
-                                    <i data-feather="phone" class="w-5 h-5 mr-3"></i>
-                                    <p class="text-sm">+27 83 657 3397</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="mailto:timothy@hashlytics.co.za?subject=Director%20Nomination%20-%20Earlington%20Legacy%20Initiative" class="mt-8 w-full flex items-center justify-center px-8 py-3 border border-white text-base font-bold rounded-xl text-teal-600 bg-white hover:bg-teal-50 transition-colors shadow-lg">
-                            <i data-feather="send" class="w-5 h-5 mr-2"></i> Send Nomination Email
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 5. Footer - Transformed into 3-Column Layout -->
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-700 pb-8">
-                <!-- Column 1: Logo & Mission -->
-                <div>
-                    <span class="text-2xl font-extrabold text-teal-400">ELI<span class="text-white font-medium text-lg ml-1">NPC</span></span>
-                    <p class="mt-4 text-sm text-gray-400 max-w-xs">
-                        Formalizing support for Earlington Secondary School through sustainable funding, strong governance, and high-impact strategic programs.
-                    </p>
-                </div>
-                
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-teal-400">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#vision" class="text-gray-400 hover:text-teal-300 transition-colors">Executive Summary</a></li>
-                        <li><a href="#mission" class="text-gray-400 hover:text-teal-300 transition-colors">Strategic Pillars</a></li>
-                        <li><a href="#governance" class="text-gray-400 hover:text-teal-300 transition-colors">Board Structure</a></li>
-                        <li><a href="#join" class="text-gray-400 hover:text-teal-300 transition-colors">Nominate a Director</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Contact -->
-                <div>
-                    <h4 class="text-lg font-semibold mb-4 text-teal-400">Contact the Founder</h4>
-                    <p class="text-sm text-gray-400">
-                        Timothy Padayachee
-                    </p>
-                    <p class="mt-2 text-sm text-gray-400 flex items-center">
-                        <i data-feather="mail" class="w-4 h-4 mr-2"></i>
-                        <a href="mailto:timothy@hashlytics.co.za" class="hover:text-teal-300">timothy@hashlytics.co.za</a>
-                    </p>
-                    <p class="text-sm text-gray-400 flex items-center mt-1">
-                        <i data-feather="phone" class="w-4 h-4 mr-2"></i>
-                        +27 83 657 3397
-                    </p>
-                </div>
-            </div>
-
-            <p class="text-center text-xs text-gray-500 pt-8">
-                &copy; 2025 Earlington Legacy Initiative NPC | Document Status: Final Draft for Board Nomination & Registration (October 2025)
-            </p>
+    <!-- FOUNDATION -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-100 pb-2">Our Foundation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Mission & Purpose</h3>
+          <p class="text-gray-600">The ELI empowers Earlington students and community members through purpose-driven development programs focused on legacy and sustainable impact.</p>
         </div>
-    </footer>
+        <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Governance: The NPC Structure</h3>
+          <p class="text-gray-600">Formalizing as a Non-Profit Company ensures transparency, accountability, and the framework necessary to scale impact sustainably.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Measurable Impact</h3>
+          <p class="text-gray-600">Success is measured through educational outcomes, financial literacy, and local development milestones.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Sustainability & Future</h3>
+          <p class="text-gray-600">ELI focuses on building partnerships and self-sustaining programs that thrive independently over time.</p>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Feather Icons initialization
-            feather.replace();
+    <!-- STRATEGIC PILLARS -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-100 pb-2">Four Strategic Pillars</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-t-4 border-blue-500">
+          <p class="text-lg font-bold text-blue-700 mb-1">1. Purpose-Driven Education</p>
+          <p class="text-sm text-gray-600">Integrating legacy principles into core and extra-curricular programs.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-t-4 border-yellow-500">
+          <p class="text-lg font-bold text-yellow-700 mb-1">2. Financial Literacy & Empowerment</p>
+          <p class="text-sm text-gray-600">Providing the knowledge and tools for long-term economic stability.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-t-4 border-red-500">
+          <p class="text-lg font-bold text-red-700 mb-1">3. Community Skill Mastery</p>
+          <p class="text-sm text-gray-600">Training in relevant, transferable skills for local economic growth.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-t-4 border-green-500">
+          <p class="text-lg font-bold text-green-700 mb-1">4. Mentorship & Networking</p>
+          <p class="text-sm text-gray-600">Connecting learners with mentors and professional networks.</p>
+        </div>
+      </div>
+    </section>
 
-            // Card Toggle Logic
-            const missionCards = document.getElementById('mission-cards');
-            missionCards.addEventListener('click', (e) => {
-                const card = e.target.closest('.card');
-                if (!card) return;
+    <!-- OPEN POSITIONS -->
+    <section id="open-positions" class="space-y-6 pt-10">
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-600 pb-2">Board of Directors Positions (8 Open)</h2>
+      <p class="text-gray-600">We invite nominations for the following voluntary leadership roles to complete our founding board.</p>
 
-                document.querySelectorAll('#mission-cards .card').forEach(c => {
-                    if (c !== card && c.classList.contains('active')) {
-                        c.classList.remove('active');
-                    }
-                });
-                card.classList.toggle('active');
-            });
+      <div class="bg-indigo-50 p-6 rounded-xl shadow-lg border-2 border-indigo-200 mb-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+        <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1761749620/Timothy%20Padayachee.png"
+             alt="Portrait of Timothy Padayachee"
+             class="w-28 h-28 rounded-full object-cover border-4 border-amber-500 shadow-xl"
+             onerror="this.onerror=null; this.src='https://placehold.co/150x150/1e3a8a/ffffff?text=T.P.';">
+        <div>
+          <h3 class="text-2xl font-extrabold text-indigo-800">Founding Chairperson: Timothy Padayachee (Designated)</h3>
+          <p class="text-lg text-indigo-600 mt-1">Guiding the strategic vision and governance of the Earlington Legacy Initiative.</p>
+          <p class="text-sm text-gray-500 mt-2">Mr. Padayachee’s position is designated. Eight additional directors are sought to complement his leadership.</p>
+        </div>
+      </div>
 
-            // Mobile Menu Toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Vice-Chairperson</p><p class="text-sm text-gray-500">Succession and internal board management; develops the Board Charter.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Secretary</p><p class="text-sm text-gray-500">Legal administration and CIPC/NPO compliance; manages filings and POPIA.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Treasurer</p><p class="text-sm text-gray-500">Financial oversight and compliance; manages budget and PBO status.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Fundraising & Resource Director</p><p class="text-sm text-gray-500">Leads donor engagement and corporate partnerships for CSI funding.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">School Liaison Director</p><p class="text-sm text-gray-500">Partnership alignment with SGB and local education stakeholders.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Programme & Impact Director</p><p class="text-sm text-gray-500">Designs and monitors impact programs; manages legacy training reports.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400"><p class="text-xl font-bold text-gray-900">NED – Audit/Finance Focus</p><p class="text-sm text-gray-500">Independent oversight; chairs the Finance & Audit Committee.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400"><p class="text-xl font-bold text-gray-900">NED – Legal/Governance Focus</p><p class="text-sm text-gray-500">Independent governance advisor; chairs the Ethics & Governance Committee.</p></div>
+      </div>
+    </section>
 
-            // Smooth Scrolling and Mobile Menu Close
-            document.querySelectorAll('#mobile-menu a, .nav-link, a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href').startsWith('#')) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- CONTACT CTA -->
+    <section id="contact" class="pt-10">
+      <div class="bg-indigo-600 p-8 rounded-2xl shadow-2xl text-white text-center">
+        <h2 class="text-3xl font-extrabold mb-4">Ready to Define Your Legacy?</h2>
+        <p class="text-xl mb-6">If you or someone you know possesses the passion and expertise for these roles, we invite your nomination.</p>
 
+        <div class="inline-block p-4 bg-indigo-700 rounded-xl glow-pulse transition duration-500">
+          <p class="text-2xl font-bold mb-1">Contact for Nomination:</p>
+          <p class="text-lg font-medium">Timothy Padayachee</p>
+          <p class="text-lg font-light">Email: <a href="mailto:timothy@hashlytics.co.za" class="underline hover:text-indigo-200">timothy@hashlytics.co.za</a></p>
+        </div>
+
+        <div class="mt-6">
+          <a href="#top" class="text-white text-sm opacity-75 hover:opacity-100 transition duration-300 block mt-4">↑ Back to Top</a>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
