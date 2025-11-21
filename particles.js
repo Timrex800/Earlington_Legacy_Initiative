@@ -25,23 +25,24 @@
 
     // 2. Inject UI HTML into the Hero Section
     const heroSection = document.getElementById('home');
-    // Remove existing UI if present (for hot reloading/multiple runs)
+    // Remove existing UI if present
     const existingUI = document.getElementById('particleUI');
     if (existingUI) existingUI.remove();
 
     const uiContainer = document.createElement('div');
     uiContainer.id = 'particleUI';
+    // Updated values to match CodePen exactly
     uiContainer.innerHTML = `
-        <label>Particles: <input type="range" id="pCount" min="100" max="2000" step="50" value="500"></label>
+        <label>Particles: <input type="range" id="pCount" min="500" max="4000" step="100" value="2000"></label>
         <label>Speed: <input type="range" id="speed" min="0.2" max="3" step="0.1" value="1"></label>
-        <label>Trail: <input type="range" id="trail" min="0.1" max="0.9" step="0.01" value="0.3"></label>
+        <label>Trail: <input type="range" id="trail" min="0.3" max="0.95" step="0.01" value="0.85"></label>
         <label>Palette:
             <select id="palette">
-                <option value="blue" selected>Blue (Theme)</option>
                 <option value="default">Default</option>
                 <option value="neon">Neon</option>
                 <option value="pastel">Pastel</option>
                 <option value="monochrome">Monochrome</option>
+                <option value="blue">Blue (Theme)</option>
             </select>
         </label>
     `;
@@ -125,7 +126,7 @@
         neon:    ['#0ff','#f0f','#ff0','#0f0','#f00'],
         pastel:  ['#ffb3ba','#ffdfba','#ffffba','#baffc9','#bae1ff'],
         monochrome: ['#fff'],
-        blue: ['#2563EB', '#1E40AF', '#60A5FA', '#93C5FD', '#DBEAFE'] // Added theme match
+        blue: ['#2563EB', '#1E40AF', '#60A5FA', '#93C5FD', '#DBEAFE']
     };
     const pickColor = (() => {
         let idx = 0;
