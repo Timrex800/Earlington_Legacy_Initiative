@@ -814,6 +814,22 @@
           <a href="#" class="hover:text-white transition ml-2">Terms of Use</a> | 
           <a href="#" class="hover:text-white transition ml-2">POPIA Compliance</a>
         </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when link is clicked
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.getElementById('mobileMenu').classList.add('hidden');
       });
     });
 
