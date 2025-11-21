@@ -1,61 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earlington Legacy Initiative - Website Archive</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f8fafc;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #2563eb, #9333ea);
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .contact-item {
+      padding: 20px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      border-left: 4px solid #2563eb;
+    }
+
+    .nav-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 15px;
+      background: #e0e7ff;
+      color: #3730a3;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: #c7d2fe;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border-radius: 8px;
+    }
+
+    .stat-number {
+      font-size: 2em;
+      font-weight: bold;
+      display: block;
+    }
+
+    .archive-contents {
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .file-list {
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>🏫 Earlington Legacy Initiative</h1>
+    <h2>Website Archive & Documentation</h2>
+    <p><strong>Generated:</strong> November 18, 2025 | <strong>Version:</strong> 1.1</p>
+  </div>
+
+  <div class="section">
+    <h2>📞 Contact Information</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <h3>📧 Primary Email</h3>
+        <p><strong>timothy@hashlytics.co.za</strong></p>
+        <p>For all inquiries and partnerships</p>
+      </div>
+      <div class="contact-item">
+        <h3>📱 Phone Numbers</h3>
+        <p><strong>+27 83 657 3397</strong> (Timothy)</p>
+        <p><strong>+27 84 269 3470</strong> (Kuben)</p>
+      </div>
+      <div class="contact-item">
+        <h3>📍 Physical Address</h3>
+        <p><strong>2 Earlcroft Close</strong></p>
+        <p>Phoenix, 4068</p>
+        <p>South Africa</p>
+      </div>
+      <div class="contact-item">
+        <h3>📮 Postal Address</h3>
+        <p><strong>PO Box 75337</strong></p>
+        <p>Gardenview, 2043</p>
+        <p>South Africa</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🌐 Website Structure</h2>
+    <div class="nav-links">
+      <a href="/" class="nav-link">🏠 Home</a>
+      <a href="/about" class="nav-link">📖 About Us</a>
+      <a href="/pillars" class="nav-link">🏛️ Strategic Pillars</a>
+      <a href="/get-involved" class="nav-link">🤝 Get Involved</a>
+      <a href="/platform" class="nav-link">⚡ UbuntuBridge Platform</a>
+      <a href="/impact" class="nav-link">📊 Impact & Transparency</a>
+      <a href="/news" class="nav-link">📰 News & Updates</a>
+      <a href="/faq" class="nav-link">❓ FAQ</a>
+      <a href="/contact" class="nav-link">📞 Contact</a>
+      <a href="/privacy" class="nav-link">🔒 Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📊 School Statistics (November 2025)</h2>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">955</span>
+        Total Students
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">493</span>
+        Female Students
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">462</span>
+        Male Students
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5</span>
+        Grade Levels
+      </div>
+    </div>
+
+    <h3>🎯 Demographics</h3>
+    <ul>
+      <li><strong>Indian:</strong> 801 learners (83.9%)</li>
+      <li><strong>African:</strong> 132 learners (13.8%)</li>
+      <li><strong>Coloured:</strong> 21 learners (2.2%)</li>
+      <li><strong>Chinese:</strong> 1 learner (0.1%)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🎨 Design & Technology</h2>
+    <h3>Technology Stack</h3>
+    <ul>
+      <li><strong>Framework:</strong> Next.js 15 with App Router</li>
+      <li><strong>Language:</strong> TypeScript 5</li>
+      <li><strong>Styling:</strong> Tailwind CSS 4</li>
+      <li><strong>Components:</strong> shadcn/ui</li>
+      <li><strong>Database:</strong> Prisma ORM with SQLite</li>
+      <li><strong>AI Integration:</strong> ZAI SDK</li>
+    </ul>
+
+    <h3>Color Palette</h3>
+    <ul>
+      <li><strong>Primary:</strong> Deep Navy (#0A1E3F)</li>
+      <li><strong>Secondary:</strong> Charcoal Grey (#2C3E50)</li>
+      <li><strong>Accent:</strong> Cyan, Coral, Purple, Green</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🏢 Leadership</h2>
+    <p><strong>Chairman & Programme & Impact Director:</strong> Timothy Padayachee</p>
+    <p><strong>Vice-Chairperson:</strong> Kuben Govender</p>
+    <p><strong>Board of Directors:</strong> 9 members across executive and non-executive roles</p>
+  </div>
+
+  <div class="section">
+    <h2>🤝 Key Partnerships</h2>
+    <h3>VUMA Afrihost Partnership</h3>
+    <ul>
+      <li>1Gbps Fibre Connection secured</li>
+      <li>Valued at R150,000 annually</li>
+      <li>Installation completed November 28, 2025</li>
+    </ul>
+  </div>
+
+  <div class="archive-contents">
+    <h2>📦 Archive Contents</h2>
+    <p>This archive contains the complete website source code and built files:</p>
+    <div class="file-list">
+      <strong>Source Files:</strong>
+      ├── src/app/ # Next.js app directory (all pages)
+      ├── src/components/ui/ # shadcn/ui components
+      ├── src/lib/ # Utility functions and database
+      ├── src/hooks/ # React hooks
+      ├── public/ # Static assets (logo, images)
+      ├── prisma/ # Database schema
+      ├── package.json # Dependencies and scripts
+      ├── tailwind.config.ts # Tailwind configuration
+      ├── tsconfig.json # TypeScript configuration
+      └── WEBSITE_DRAFT.txt # Complete website documentation
+
+      <strong>Built Files:</strong>
+      ├── .next/static/ # Static assets
+      ├── .next/standalone/ # Standalone build
+      └── Various build manifests and configurations
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🚀 Deployment Instructions</h2>
+    <ol>
+      <li><strong>Extract the archive</strong> to your desired location</li>
+      <li><strong>Install dependencies:</strong> <code>npm install</code></li>
+      <li><strong>Set up database:</strong> <code>npm run db:push</code></li>
+      <li><strong>Start development server:</strong> <code>npm run dev</code></li>
+      <li><strong>Build for production:</strong> <code>npm run build</code></li>
+      <li><strong>Start production server:</strong> <code>npm start</code></li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>📈 Current Impact Metrics</h2>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-number">R120K</span>
+        Funds Raised
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">2</span>
+        Projects Complete
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">9</span>
+        Active Volunteers
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        Corporate Partners
+      </div>
+    </div>
+  </div>
+
+  <footer
+    style="text-align: center; padding: 40px; margin-top: 40px; background: #1e293b; color: white; border-radius: 10px;">
+    <p><strong>© 2025 Earlington Legacy Initiative</strong></p>
+    <p>Building a lasting legacy of educational excellence and opportunity</p>
+    <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+      Archive generated on November 18, 2025 | Version 1.1
+    </p>
+  </footer>
+</body>
+
+</html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Earlington Legacy Initiative (ELI) — NPO Launch & Board Nominations</title>
 
-  <meta name="description" content="Official announcement of the Earlington Legacy Initiative (ELI) NPO launch and opening of applications for 8 strategic Director positions. Define purpose, inspire legacy.">
-  <meta name="keywords" content="Earlington Legacy Initiative, ELI, NPO, NPC, Board of Directors, Nomination, Purpose, Legacy, Education, Community">
+  <meta name="description"
+    content="Official announcement of the Earlington Legacy Initiative (ELI) NPO launch and opening of applications for 8 strategic Director positions. Define purpose, inspire legacy.">
+  <meta name="keywords"
+    content="Earlington Legacy Initiative, ELI, NPO, NPC, Board of Directors, Nomination, Purpose, Legacy, Education, Community">
 
   <meta property="og:title" content="Earlington Legacy Initiative (ELI) NPO Launch & Board Nominations Now Open">
-  <meta property="og:description" content="Join the launch of the Earlington Legacy Initiative (ELI) Non-Profit Company and apply for 8 open Director positions. Help shape the future of purpose-driven education and community impact.">
+  <meta property="og:description"
+    content="Join the launch of the Earlington Legacy Initiative (ELI) Non-Profit Company and apply for 8 open Director positions. Help shape the future of purpose-driven education and community impact.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://timrex800.github.io/Earlington_Legacy_Initiative/">
-  <meta property="og:image" content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Earlington Legacy Initiative (ELI) — NPO Launch & Board Nominations">
-  <meta name="twitter:description" content="Join the ELI NPO launch and apply for one of 8 open Board Director positions.">
-  <meta name="twitter:image" content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
+  <meta name="twitter:description"
+    content="Join the ELI NPO launch and apply for one of 8 open Board Director positions.">
+  <meta name="twitter:image"
+    content="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png">
 
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-  <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-    .eli-primary { background-color: #4f46e5; }
-    .eli-accent { color: #f59e0b; }
-    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .glow-pulse {
-      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
-      animation: pulse-glow 2s infinite;
-    }
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-    }
-    .fade-in { animation: fadeIn 0.5s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
 </head>
+
 <body class="p-4 md:p-10 min-h-screen">
   <div id="top" class="w-full max-w-6xl mx-auto space-y-12">
     <!-- HEADER -->
     <header class="p-8 bg-white rounded-2xl shadow-xl border-t-8 border-indigo-600">
       <div class="flex justify-between items-center mb-6">
-        <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png"
-             alt="Earlington Legacy Initiative Logo"
-             class="h-20 w-auto object-contain"
-             onerror="this.onerror=null; this.src='https://placehold.co/200x60/1e3a8a/ffffff?text=ELI+Logo';">
+        <img
+          src="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png"
+          alt="Earlington Legacy Initiative Logo" class="h-20 w-auto object-contain"
+          onerror="this.onerror=null; this.src='https://placehold.co/200x60/1e3a8a/ffffff?text=ELI+Logo';">
         <div>
-          <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg mr-2">NEW NPO</span>
-          <span class="inline-block bg-amber-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">LAUNCHING SOON</span>
+          <span
+            class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg mr-2">NEW
+            NPO</span>
+          <span
+            class="inline-block bg-amber-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">LAUNCHING
+            SOON</span>
         </div>
       </div>
       <div class="text-center">
@@ -67,11 +357,11 @@
         </p>
         <div class="mt-8 flex justify-center space-x-4">
           <a href="#open-positions" aria-label="View open Director positions"
-             class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
             View Open Director Positions
           </a>
           <a href="#nomination-form" aria-label="Submit nomination form"
-             class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
+            class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
             Submit Nomination
           </a>
         </div>
@@ -103,19 +393,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Our Mission & Purpose</h3>
-          <p class="text-gray-600">The ELI empowers Earlington students and community members through purpose-driven development programs focused on legacy and sustainable impact.</p>
+          <p class="text-gray-600">The ELI empowers Earlington students and community members through purpose-driven
+            development programs focused on legacy and sustainable impact.</p>
         </div>
         <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Governance: The NPC Structure</h3>
-          <p class="text-gray-600">Formalizing as a Non-Profit Company ensures transparency, accountability, and the framework necessary to scale impact sustainably.</p>
+          <p class="text-gray-600">Formalizing as a Non-Profit Company ensures transparency, accountability, and the
+            framework necessary to scale impact sustainably.</p>
         </div>
         <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Measurable Impact</h3>
-          <p class="text-gray-600">Success is measured through educational outcomes, financial literacy, and local development milestones.</p>
+          <p class="text-gray-600">Success is measured through educational outcomes, financial literacy, and local
+            development milestones.</p>
         </div>
         <div class="card bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Sustainability & Future</h3>
-          <p class="text-gray-600">ELI focuses on building partnerships and self-sustaining programs that thrive independently over time.</p>
+          <p class="text-gray-600">ELI focuses on building partnerships and self-sustaining programs that thrive
+            independently over time.</p>
         </div>
       </div>
     </section>
@@ -145,35 +439,64 @@
 
     <!-- OPEN POSITIONS -->
     <section id="open-positions" class="space-y-6 pt-10">
-      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-600 pb-2">Board of Directors Positions (8 Open)</h2>
-      <p class="text-gray-600">We invite nominations for the following voluntary leadership roles to complete our founding board.</p>
-      <div class="bg-indigo-50 p-6 rounded-xl shadow-lg border-2 border-indigo-200 mb-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+      <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-indigo-600 pb-2">Board of Directors Positions (8
+        Open)</h2>
+      <p class="text-gray-600">We invite nominations for the following voluntary leadership roles to complete our
+        founding board.</p>
+      <div
+        class="bg-indigo-50 p-6 rounded-xl shadow-lg border-2 border-indigo-200 mb-6 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
         <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1761749620/Timothy%20Padayachee.png"
-             alt="Portrait of Timothy Padayachee"
-             class="w-28 h-28 rounded-full object-cover border-4 border-amber-500 shadow-xl"
-             onerror="this.onerror=null; this.src='https://placehold.co/150x150/1e3a8a/ffffff?text=T.P.';">
+          alt="Portrait of Timothy Padayachee"
+          class="w-28 h-28 rounded-full object-cover border-4 border-amber-500 shadow-xl"
+          onerror="this.onerror=null; this.src='https://placehold.co/150x150/1e3a8a/ffffff?text=T.P.';">
         <div>
           <h3 class="text-2xl font-extrabold text-indigo-800">Founding Chairperson: Timothy Padayachee (Designated)</h3>
-          <p class="text-lg text-indigo-600 mt-1">Guiding the strategic vision and governance of the Earlington Legacy Initiative.</p>
-          <p class="text-sm text-gray-500 mt-2">Mr. Padayachee’s position is designated. Eight additional directors are sought to complement his leadership.</p>
+          <p class="text-lg text-indigo-600 mt-1">Guiding the strategic vision and governance of the Earlington Legacy
+            Initiative.</p>
+          <p class="text-sm text-gray-500 mt-2">Mr. Padayachee’s position is designated. Eight additional directors are
+            sought to complement his leadership.</p>
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Vice-Chairperson</p><p class="text-sm text-gray-500">Succession and internal board management; develops the Board Charter.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Secretary</p><p class="text-sm text-gray-500">Legal administration and CIPC/NPO compliance; manages filings and POPIA.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Treasurer</p><p class="text-sm text-gray-500">Financial oversight and compliance; manages budget and PBO status.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Fundraising & Resource Director</p><p class="text-sm text-gray-500">Leads donor engagement and corporate partnerships for CSI funding.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">School Liaison Director</p><p class="text-sm text-gray-500">Partnership alignment with SGB and local education stakeholders.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700"><p class="text-xl font-bold text-gray-900">Programme & Impact Director</p><p class="text-sm text-gray-500">Designs and monitors impact programs; manages legacy training reports.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400"><p class="text-xl font-bold text-gray-900">NED – Audit/Finance Focus</p><p class="text-sm text-gray-500">Independent oversight; chairs the Finance & Audit Committee.</p></div>
-        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400"><p class="text-xl font-bold text-gray-900">NED – Legal/Governance Focus</p><p class="text-sm text-gray-500">Independent governance advisor; chairs the Ethics & Governance Committee.</p></div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">Vice-Chairperson</p>
+          <p class="text-sm text-gray-500">Succession and internal board management; develops the Board Charter.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">Secretary</p>
+          <p class="text-sm text-gray-500">Legal administration and CIPC/NPO compliance; manages filings and POPIA.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">Treasurer</p>
+          <p class="text-sm text-gray-500">Financial oversight and compliance; manages budget and PBO status.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">Fundraising & Resource Director</p>
+          <p class="text-sm text-gray-500">Leads donor engagement and corporate partnerships for CSI funding.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">School Liaison Director</p>
+          <p class="text-sm text-gray-500">Partnership alignment with SGB and local education stakeholders.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-indigo-700">
+          <p class="text-xl font-bold text-gray-900">Programme & Impact Director</p>
+          <p class="text-sm text-gray-500">Designs and monitors impact programs; manages legacy training reports.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400">
+          <p class="text-xl font-bold text-gray-900">NED – Audit/Finance Focus</p>
+          <p class="text-sm text-gray-500">Independent oversight; chairs the Finance & Audit Committee.</p>
+        </div>
+        <div class="card bg-white p-5 rounded-xl shadow-lg border-l-8 border-gray-400">
+          <p class="text-xl font-bold text-gray-900">NED – Legal/Governance Focus</p>
+          <p class="text-sm text-gray-500">Independent governance advisor; chairs the Ethics & Governance Committee.</p>
+        </div>
       </div>
     </section>
 
     <!-- NOMINATION FORM -->
     <section id="nomination-form" class="space-y-6 pt-10">
       <h2 class="text-3xl font-bold text-gray-800 border-b-2 border-amber-500 pb-2">Submit Nomination</h2>
-      
+
       <!-- Success Message -->
       <div id="successMessage" class="hidden bg-green-50 border border-green-200 rounded-xl p-6 fade-in">
         <div class="flex items-center space-x-3">
@@ -184,11 +507,13 @@
           </div>
           <div>
             <h3 class="text-lg font-medium text-green-800">Thank you for your nomination!</h3>
-            <p class="text-sm text-green-700 mt-1">Your submission has been received and will be reviewed by the founding committee within 7 business days. You will receive a confirmation email shortly.</p>
+            <p class="text-sm text-green-700 mt-1">Your submission has been received and will be reviewed by the
+              founding committee within 7 business days. You will receive a confirmation email shortly.</p>
           </div>
         </div>
         <div class="mt-4">
-          <a href="#top" class="inline-flex items-center px-4 py-2 border border-green-300 rounded-md shadow-sm text-sm font-medium text-green-700 bg-white hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+          <a href="#top"
+            class="inline-flex items-center px-4 py-2 border border-green-300 rounded-md shadow-sm text-sm font-medium text-green-700 bg-white hover:bg-green-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
             Back to Top
           </a>
         </div>
@@ -197,33 +522,34 @@
       <!-- Form -->
       <div id="formContainer">
         <form id="nominationForm" class="bg-white p-6 md:p-8 rounded-xl shadow-xl border border-gray-200 space-y-5"
-              action="https://formspree.io/f/mjkppqad" method="POST" enctype="multipart/form-data">
+          action="https://formspree.io/f/mjkppqad" method="POST" enctype="multipart/form-data">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
               <input type="text" name="your-name" id="your-name" placeholder="Your Name" required
-                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                     aria-describedby="your-name-error">
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                aria-describedby="your-name-error">
               <p id="your-name-error" class="mt-1 text-sm text-red-600 hidden">Please enter your full name.</p>
             </div>
             <div>
               <input type="email" name="your-email" id="your-email" placeholder="Your Email" required
-                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                     aria-describedby="your-email-error">
+                class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                aria-describedby="your-email-error">
               <p id="your-email-error" class="mt-1 text-sm text-red-600 hidden">Please enter a valid email address.</p>
             </div>
           </div>
-          
+
           <div>
             <input type="text" name="nominee-name" id="nominee-name" placeholder="Nominee Full Name" required
-                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                   aria-describedby="nominee-name-error">
-            <p id="nominee-name-error" class="mt-1 text-sm text-red-600 hidden">Please enter the nominee's full name.</p>
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              aria-describedby="nominee-name-error">
+            <p id="nominee-name-error" class="mt-1 text-sm text-red-600 hidden">Please enter the nominee's full name.
+            </p>
           </div>
-          
+
           <div>
             <select name="position" id="position" required
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    aria-describedby="position-error">
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              aria-describedby="position-error">
               <option value="">Select Position</option>
               <option>Vice-Chairperson</option>
               <option>Secretary</option>
@@ -236,35 +562,42 @@
             </select>
             <p id="position-error" class="mt-1 text-sm text-red-600 hidden">Please select a position.</p>
           </div>
-          
+
           <div>
-            <textarea name="motivation" id="motivation" placeholder="Why is this person a great fit? (200–500 words)" required rows="5"
-                      class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                      aria-describedby="motivation-error"></textarea>
-            <p id="motivation-error" class="mt-1 text-sm text-red-600 hidden">Please provide a motivation (200-500 words).</p>
+            <textarea name="motivation" id="motivation" placeholder="Why is this person a great fit? (200–500 words)"
+              required rows="5"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              aria-describedby="motivation-error"></textarea>
+            <p id="motivation-error" class="mt-1 text-sm text-red-600 hidden">Please provide a motivation (200-500
+              words).</p>
             <p id="motivation-char" class="text-xs text-gray-500 mt-1">0 / 500 characters</p>
           </div>
 
           <div>
-            <label class="block text-sm font-medium text-gray-700">Attach Supporting Document (e.g., CV/Resume, Optional):</label>
+            <label class="block text-sm font-medium text-gray-700">Attach Supporting Document (e.g., CV/Resume,
+              Optional):</label>
             <input type="file" name="nominee-file" id="nominee-file" accept=".pdf,.doc,.docx"
-                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white mt-1"
-                   aria-describedby="file-error">
-            <p id="file-error" class="mt-1 text-sm text-red-600 hidden">Please upload a valid file (PDF, DOC, DOCX, max 5MB).</p>
+              class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white mt-1"
+              aria-describedby="file-error">
+            <p id="file-error" class="mt-1 text-sm text-red-600 hidden">Please upload a valid file (PDF, DOC, DOCX, max
+              5MB).</p>
             <p class="text-xs text-gray-500 mt-1">Maximum 5MB. PDF, Word documents only.</p>
           </div>
 
-          <div class="g-recaptcha" data-sitekey="6LcD2P4rAAAAABaqD02OJT6SUsvrSB9banTCHDe-" data-callback="onRecaptchaSuccess"></div>
-          <span class="block text-xs text-gray-500 mt-1 text-center">This site is protected by reCAPTCHA and the Google 
-            <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and 
+          <div class="g-recaptcha" data-sitekey="6LcD2P4rAAAAABaqD02OJT6SUsvrSB9banTCHDe-"
+            data-callback="onRecaptchaSuccess"></div>
+          <span class="block text-xs text-gray-500 mt-1 text-center">This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy" class="underline">Privacy Policy</a> and
             <a href="https://policies.google.com/terms" class="underline">Terms of Service</a> apply.</span>
 
           <button type="submit" id="submitBtn" disabled
-                  class="w-full bg-gray-400 text-white font-bold py-3 px-6 rounded-full cursor-not-allowed">
+            class="w-full bg-gray-400 text-white font-bold py-3 px-6 rounded-full cursor-not-allowed">
             Submit Nomination
           </button>
         </form>
-        <p class="text-sm text-gray-500 text-center">Nominations are reviewed confidentially. Use <a href="mailto:timothy@hashlytics.co.za" class="text-indigo-600 underline">email</a> for direct submissions.</p>
+        <p class="text-sm text-gray-500 text-center">Nominations are reviewed confidentially. Use <a
+            href="mailto:timothy@hashlytics.co.za" class="text-indigo-600 underline">email</a> for direct submissions.
+        </p>
       </div>
     </section>
 
@@ -272,14 +605,17 @@
     <section id="contact" class="pt-10">
       <div class="bg-indigo-600 p-8 rounded-2xl shadow-2xl text-white text-center">
         <h2 class="text-3xl font-extrabold mb-4">Ready to Define Your Legacy?</h2>
-        <p class="text-xl mb-6">If you or someone you know possesses the passion and expertise for these roles, we invite your nomination.</p>
+        <p class="text-xl mb-6">If you or someone you know possesses the passion and expertise for these roles, we
+          invite your nomination.</p>
         <div class="inline-block p-4 bg-indigo-700 rounded-xl glow-pulse transition duration-500">
           <p class="text-2xl font-bold mb-1">Contact for Nomination:</p>
           <p class="text-lg font-medium">Timothy Padayachee</p>
-          <p class="text-lg font-light">Email: <a href="mailto:timothy@hashlytics.co.za" class="underline hover:text-indigo-200">timothy@hashlytics.co.za</a></p>
+          <p class="text-lg font-light">Email: <a href="mailto:timothy@hashlytics.co.za"
+              class="underline hover:text-indigo-200">timothy@hashlytics.co.za</a></p>
         </div>
         <div class="mt-6">
-          <a href="#top" class="text-white text-sm opacity-75 hover:opacity-100 transition duration-300 block mt-4">Back to Top</a>
+          <a href="#top" class="text-white text-sm opacity-75 hover:opacity-100 transition duration-300 block mt-4">Back
+            to Top</a>
         </div>
       </div>
     </section>
@@ -287,14 +623,14 @@
 
   <script>
     // Form validation and character counter
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('nominationForm');
       const motivation = document.getElementById('motivation');
       const motivationChar = document.getElementById('motivation-char');
       const fileInput = document.getElementById('nominee-file');
-      
+
       // Character counter
-      motivation.addEventListener('input', function() {
+      motivation.addEventListener('input', function () {
         const length = this.value.length;
         motivationChar.textContent = `${length} / 500 characters`;
         if (length < 200) {
@@ -307,13 +643,13 @@
       });
 
       // File validation
-      fileInput.addEventListener('change', function() {
+      fileInput.addEventListener('change', function () {
         const file = this.files[0];
         const error = document.getElementById('file-error');
         if (file) {
           const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
           const maxSize = 5 * 1024 * 1024; // 5MB
-          
+
           if (!validTypes.includes(file.type)) {
             error.classList.remove('hidden');
             error.textContent = 'Please upload a valid file (PDF, DOC, DOCX).';
@@ -329,14 +665,14 @@
       });
 
       // Form submission
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Clear previous errors
         document.querySelectorAll('.text-red-600').forEach(el => el.classList.add('hidden'));
-        
+
         let isValid = true;
-        
+
         // Validate name fields
         const nameFields = ['your-name', 'nominee-name'];
         nameFields.forEach(field => {
@@ -348,7 +684,7 @@
             isValid = false;
           }
         });
-        
+
         // Validate email
         const email = document.getElementById('your-email').value;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -356,35 +692,35 @@
           document.getElementById('your-email-error').classList.remove('hidden');
           isValid = false;
         }
-        
+
         // Validate position
         const position = document.getElementById('position').value;
         if (!position) {
           document.getElementById('position-error').classList.remove('hidden');
           isValid = false;
         }
-        
+
         // Validate motivation
         const motivationText = motivation.value.trim();
         if (motivationText.length < 200 || motivationText.length > 500) {
           document.getElementById('motivation-error').classList.remove('hidden');
           isValid = false;
         }
-        
+
         // Check reCAPTCHA
         const recaptchaResponse = grecaptcha.getResponse();
         if (!recaptchaResponse) {
           alert('Please complete the reCAPTCHA verification.');
           isValid = false;
         }
-        
+
         if (isValid) {
           // Show loading state
           const submitBtn = document.getElementById('submitBtn');
           submitBtn.textContent = 'Submitting...';
           submitBtn.disabled = true;
           submitBtn.className = 'w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-full cursor-not-allowed';
-          
+
           // Submit form
           const formData = new FormData(form);
           fetch(form.action, {
@@ -394,32 +730,32 @@
               'Accept': 'application/json'
             }
           })
-          .then(response => response.json())
-          .then(data => {
-            if (data.ok) {
-              // Show success message
-              document.getElementById('formContainer').classList.add('hidden');
-              document.getElementById('successMessage').classList.remove('hidden');
-              window.scrollTo({ top: document.getElementById('nomination-form').offsetTop, behavior: 'smooth' });
-            } else {
-              throw new Error('Submission failed');
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting your nomination. Please try again or email timothy@hashlytics.co.za directly.');
-            // Reset button
-            submitBtn.textContent = 'Submit Nomination';
-            submitBtn.disabled = false;
-            submitBtn.className = 'w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg transform hover:scale-105';
-          });
+            .then(response => response.json())
+            .then(data => {
+              if (data.ok) {
+                // Show success message
+                document.getElementById('formContainer').classList.add('hidden');
+                document.getElementById('successMessage').classList.remove('hidden');
+                window.scrollTo({ top: document.getElementById('nomination-form').offsetTop, behavior: 'smooth' });
+              } else {
+                throw new Error('Submission failed');
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('There was an error submitting your nomination. Please try again or email timothy@hashlytics.co.za directly.');
+              // Reset button
+              submitBtn.textContent = 'Submit Nomination';
+              submitBtn.disabled = false;
+              submitBtn.className = 'w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg transform hover:scale-105';
+            });
         }
       });
 
       // Real-time validation
       ['your-name', 'your-email', 'nominee-name', 'position', 'motivation'].forEach(field => {
         const input = document.getElementById(field);
-        input.addEventListener('blur', function() {
+        input.addEventListener('blur', function () {
           const error = document.getElementById(field + '-error');
           if (this.hasAttribute('required') && !this.value.trim()) {
             error.classList.remove('hidden');
@@ -430,7 +766,7 @@
       });
 
       // Email real-time validation
-      document.getElementById('your-email').addEventListener('input', function() {
+      document.getElementById('your-email').addEventListener('input', function () {
         const error = document.getElementById('your-email-error');
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (this.value && !emailRegex.test(this.value)) {
@@ -458,4 +794,5 @@
     }
   </script>
 </body>
+
 </html>
