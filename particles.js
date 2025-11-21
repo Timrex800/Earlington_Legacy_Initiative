@@ -25,13 +25,11 @@
 
     // 2. Inject UI HTML into the Hero Section
     const heroSection = document.getElementById('home');
-    // Remove existing UI if present
     const existingUI = document.getElementById('particleUI');
     if (existingUI) existingUI.remove();
 
     const uiContainer = document.createElement('div');
     uiContainer.id = 'particleUI';
-    // Updated values to match CodePen exactly
     uiContainer.innerHTML = `
         <label>Particles: <input type="range" id="pCount" min="500" max="4000" step="100" value="2000"></label>
         <label>Speed: <input type="range" id="speed" min="0.2" max="3" step="0.1" value="1"></label>
@@ -52,7 +50,6 @@
     const canvas = document.getElementById('heroCanvas');
     const ctx = canvas.getContext('2d');
 
-    // Resize to container
     const resize = () => {
         canvas.width = heroSection.offsetWidth;
         canvas.height = heroSection.offsetHeight;
@@ -60,13 +57,11 @@
     window.addEventListener('resize', resize);
     resize();
 
-    // UI Elements
     const pCountInput = document.getElementById('pCount');
     const speedInput  = document.getElementById('speed');
     const trailInput  = document.getElementById('trail');
     const paletteSel  = document.getElementById('palette');
 
-    // Particle System
     class Particle {
         constructor() { this.reset(); }
         reset() {
@@ -85,10 +80,9 @@
             const force = G / (distSq + 1000);
             this.vx += dx * force * dt;
             this.vy += dy * force * dt;
-            this.vx *= 0.99; this.vy *= 0.99; // Damping
+            this.vx *= 0.99; this.vy *= 0.99;
             this.x += this.vx * dt;
             this.y += this.vy * dt;
-            // Wrap
             if (this.x < -10) this.x = canvas.width + 10;
             if (this.x > canvas.width + 10) this.x = -10;
             if (this.y < -10) this.y = canvas.height + 10;
@@ -106,7 +100,6 @@
     };
     createParticles(+pCountInput.value);
 
-    // Mouse/Touch
     const pointer = { x: canvas.width/2, y: canvas.height/2 };
     const setPointer = (x, y) => {
         const rect = canvas.getBoundingClientRect();
@@ -120,7 +113,6 @@
         e.preventDefault();
     }, {passive:false});
 
-    // Palettes
     const palettes = {
         default: ['#ff6b6b','#f7d794','#ffb142','#c7ecee','#f5d9b3'],
         neon:    ['#0ff','#f0f','#ff0','#0f0','#f00'],
@@ -138,13 +130,11 @@
         };
     })();
 
-    // Loop
     let last = performance.now();
     const render = (now) => {
         const dt = (now - last) / 16;
         last = now;
 
-        // Trail effect
         ctx.fillStyle = `rgba(0,0,0,${trailInput.value})`;
         ctx.fillRect(0,0,canvas.width,canvas.height);
 
@@ -159,7 +149,6 @@
     };
     requestAnimationFrame(render);
 
-    // Events
     pCountInput.addEventListener('input', () => createParticles(+pCountInput.value));
     paletteSel.addEventListener('change', () => pickColor(paletteSel.value));
 })();
