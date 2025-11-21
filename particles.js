@@ -1,136 +1,164 @@
 (function() {
+    // 1. Inject CSS for the UI
+    const style = document.createElement('style');
+    style.textContent = `
+        #particleUI {
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.6); color: #fff; padding: 10px 15px;
+            border-radius: 8px; font-family: Arial, sans-serif; font-size: 12px;
+            display: flex; gap: 12px; align-items: center; z-index: 20;
+            pointer-events: auto;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90%;
+            max-width: 600px;
+        }
+        #particleUI label { cursor: pointer; display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+        #particleUI input[type=range] { width: 80px; }
+        #particleUI select { background: #333; color: #fff; border: none; padding: 2px; border-radius: 4px; }
+        @media (max-width: 640px) {
+            #particleUI { bottom: 10px; padding: 8px; gap: 8px; }
+            #particleUI input[type=range] { width: 60px; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // 2. Inject UI HTML into the Hero Section
+    const heroSection = document.getElementById('home');
+    // Remove existing UI if present (for hot reloading/multiple runs)
+    const existingUI = document.getElementById('particleUI');
+    if (existingUI) existingUI.remove();
+
+    const uiContainer = document.createElement('div');
+    uiContainer.id = 'particleUI';
+    uiContainer.innerHTML = `
+        <label>Particles: <input type="range" id="pCount" min="100" max="2000" step="50" value="500"></label>
+        <label>Speed: <input type="range" id="speed" min="0.2" max="3" step="0.1" value="1"></label>
+        <label>Trail: <input type="range" id="trail" min="0.1" max="0.9" step="0.01" value="0.3"></label>
+        <label>Palette:
+            <select id="palette">
+                <option value="blue" selected>Blue (Theme)</option>
+                <option value="default">Default</option>
+                <option value="neon">Neon</option>
+                <option value="pastel">Pastel</option>
+                <option value="monochrome">Monochrome</option>
+            </select>
+        </label>
+    `;
+    heroSection.appendChild(uiContainer);
+
+    // 3. Visualization Logic
     const canvas = document.getElementById('heroCanvas');
     const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
-    
-    // Configuration
-    const config = {
-        particleCount: 100,
-        mouseRadius: 100,
-        gravity: 0.05,
-        friction: 0.98,
-        color: '#2563EB' // Primary blue
+
+    // Resize to container
+    const resize = () => {
+        canvas.width = heroSection.offsetWidth;
+        canvas.height = heroSection.offsetHeight;
     };
+    window.addEventListener('resize', resize);
+    resize();
 
+    // UI Elements
+    const pCountInput = document.getElementById('pCount');
+    const speedInput  = document.getElementById('speed');
+    const trailInput  = document.getElementById('trail');
+    const paletteSel  = document.getElementById('palette');
+
+    // Particle System
     class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 2;
-            this.vy = (Math.random() - 0.5) * 2;
-            this.size = Math.random() * 2 + 1;
-            this.color = `rgba(37, 99, 235, ${Math.random() * 0.5 + 0.2})`; // Blue with varying opacity
+        constructor() { this.reset(); }
+        reset() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 0.5 + 0.5;
+            this.vx = Math.cos(angle) * speed;
+            this.vy = Math.sin(angle) * speed;
+            this.size = Math.random() * 1.5 + 0.5;
         }
-
-        update(mouseX, mouseY) {
-            // Mouse interaction (Gravity Well)
-            if (mouseX && mouseY) {
-                const dx = mouseX - this.x;
-                const dy = mouseY - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 300) {
-                    const force = (300 - distance) / 300;
-                    this.vx += (dx / distance) * force * 0.5;
-                    this.vy += (dy / distance) * force * 0.5;
-                }
-            }
-
-            // Physics
-            this.vx *= config.friction;
-            this.vy *= config.friction;
-            
-            this.x += this.vx;
-            this.y += this.vy;
-
-            // Boundary check (bounce)
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
+        update(gx, gy, dt, speedFactor) {
+            const dx = gx - this.x, dy = gy - this.y;
+            const distSq = dx*dx + dy*dy;
+            const G = 100 * speedFactor;
+            const force = G / (distSq + 1000);
+            this.vx += dx * force * dt;
+            this.vy += dy * force * dt;
+            this.vx *= 0.99; this.vy *= 0.99; // Damping
+            this.x += this.vx * dt;
+            this.y += this.vy * dt;
+            // Wrap
+            if (this.x < -10) this.x = canvas.width + 10;
+            if (this.x > canvas.width + 10) this.x = -10;
+            if (this.y < -10) this.y = canvas.height + 10;
+            if (this.y > canvas.height + 10) this.y = -10;
         }
-
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
+        draw(col) {
+            ctx.fillStyle = col;
+            ctx.fillRect(this.x, this.y, this.size, this.size);
         }
     }
 
-    function init() {
-        resize();
-        createParticles();
-        animate();
-        
-        window.addEventListener('resize', resize);
-        
-        // Mouse tracking
-        let mouseX = null;
-        let mouseY = null;
-        
-        const heroSection = document.getElementById('home');
-        heroSection.addEventListener('mousemove', (e) => {
-            const rect = canvas.getBoundingClientRect();
-            mouseX = e.clientX - rect.left;
-            mouseY = e.clientY - rect.top;
+    let particles = [];
+    const createParticles = (count) => {
+        particles = new Array(count).fill().map(() => new Particle());
+    };
+    createParticles(+pCountInput.value);
+
+    // Mouse/Touch
+    const pointer = { x: canvas.width/2, y: canvas.height/2 };
+    const setPointer = (x, y) => {
+        const rect = canvas.getBoundingClientRect();
+        pointer.x = x - rect.left;
+        pointer.y = y - rect.top;
+    };
+    heroSection.addEventListener('mousemove', e => setPointer(e.clientX, e.clientY));
+    heroSection.addEventListener('touchmove', e => {
+        const t = e.touches[0];
+        setPointer(t.clientX, t.clientY);
+        e.preventDefault();
+    }, {passive:false});
+
+    // Palettes
+    const palettes = {
+        default: ['#ff6b6b','#f7d794','#ffb142','#c7ecee','#f5d9b3'],
+        neon:    ['#0ff','#f0f','#ff0','#0f0','#f00'],
+        pastel:  ['#ffb3ba','#ffdfba','#ffffba','#baffc9','#bae1ff'],
+        monochrome: ['#fff'],
+        blue: ['#2563EB', '#1E40AF', '#60A5FA', '#93C5FD', '#DBEAFE'] // Added theme match
+    };
+    const pickColor = (() => {
+        let idx = 0;
+        return (scheme) => {
+            const arr = palettes[scheme] || palettes.default;
+            const col = arr[idx % arr.length];
+            idx++;
+            return col;
+        };
+    })();
+
+    // Loop
+    let last = performance.now();
+    const render = (now) => {
+        const dt = (now - last) / 16;
+        last = now;
+
+        // Trail effect
+        ctx.fillStyle = `rgba(0,0,0,${trailInput.value})`;
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        const speedFactor = +speedInput.value;
+        const scheme = paletteSel.value;
+
+        particles.forEach(p => {
+            p.update(pointer.x, pointer.y, dt, speedFactor);
+            p.draw(pickColor(scheme));
         });
-        
-        heroSection.addEventListener('mouseleave', () => {
-            mouseX = null;
-            mouseY = null;
-        });
+        requestAnimationFrame(render);
+    };
+    requestAnimationFrame(render);
 
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-            
-            // Draw connecting lines
-            ctx.strokeStyle = 'rgba(37, 99, 235, 0.1)';
-            ctx.lineWidth = 0.5;
-            
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update(mouseX, mouseY);
-                particles[i].draw();
-                
-                // Connect nearby particles
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            
-            requestAnimationFrame(animate);
-        }
-    }
-
-    function createParticles() {
-        particles = [];
-        for (let i = 0; i < config.particleCount; i++) {
-            particles.push(new Particle());
-        }
-    }
-
-    function resize() {
-        const heroSection = document.getElementById('home');
-        width = heroSection.offsetWidth;
-        height = heroSection.offsetHeight;
-        canvas.width = width;
-        canvas.height = height;
-        // Re-create particles on resize to prevent stretching/loss
-        if(particles.length === 0) createParticles();
-    }
-
-    // Start
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
+    // Events
+    pCountInput.addEventListener('input', () => createParticles(+pCountInput.value));
+    paletteSel.addEventListener('change', () => pickColor(paletteSel.value));
 })();
