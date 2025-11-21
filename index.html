@@ -129,9 +129,10 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="relative bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-24">
-    <div class="absolute inset-0 bg-black opacity-20"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section id="home" class="relative bg-gray-900 text-white py-24 overflow-hidden">
+    <canvas id="heroCanvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+    <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-in">
         Transforming Education at<br>Earlington Secondary School
       </h1>
@@ -769,7 +770,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png" 
+          <img src="https://res.cloudinary.com/drj03twbh/image/upload/v1763746988/SilverFont_ovmayl.png" 
                alt="Earlington Legacy Initiative" 
                class="h-16 w-auto mb-4"
                onerror="this.src='https://placehold.co/150x60/ffffff/2563EB?text=ELI'">
@@ -866,5 +867,6 @@
       generateLegacyWall();
     });
   </script>
+  <script src="particles.js"></script>
 </body>
 </html>
