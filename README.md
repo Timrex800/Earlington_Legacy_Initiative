@@ -1,75 +1,117 @@
-# 🌟 Earlington Legacy Initiative (ELI)
+# Earlington Legacy Initiative (NPC)
+### Advancing Educational Excellence for Earlington Secondary School
+**Official Public Information Repository – Website Under Development**
 
-### Official Launch Announcement & Board Nominations
+## Overview
 
-Welcome to the official GitHub repository for the **Earlington Legacy Initiative (ELI)** — a purpose-driven Non-Profit Company (NPC) dedicated to empowering the students and community of Earlington through education, mentorship, and sustainable development.
+The Earlington Legacy Initiative (NPC) is a formally governed, purpose-driven organisation dedicated to uplifting Earlington Secondary School through structured investment, transparent governance, and sustainable community impact.
+This repository contains the assets for the Initiative’s official public website hosted via GitHub Pages.
 
-This repository hosts the **public announcement page** for the ELI launch and **Board of Directors nominations**.
+The website remains in development and will reflect the Initiative’s full governance, compliance roadmap, strategic pillars, and long-term operational frameworks.
 
----
+The repository is not intended for cloning and is maintained solely for internal use and public visibility.
 
-## 🏛️ About ELI
+## Vision and Mission
 
-**The Earlington Legacy Initiative (ELI)** is built on the belief that *purpose defines legacy*.  
-We are formalizing as a **Non-Profit Company (NPC)** to enable transparent governance, sustainable funding, and measurable community impact.
+### Vision
+To transform Earlington Secondary School into a centre of excellence that empowers every learner with dignity, opportunity, and future-ready skills.
 
-Our programs focus on:
-- 🎓 Purpose-Driven Education  
-- 💰 Financial Literacy & Empowerment  
-- 🛠️ Community Skill Mastery  
-- 🌐 Mentorship & Networking  
+### Mission
+To deliver sustainable educational upliftment through responsible governance, strategic partnerships, transparent financial stewardship, and community-driven development.
 
----
+## Strategic Pillars
 
-## 🧭 Board Nominations
+The organisation’s work is anchored on four foundational pillars.
 
-We are seeking **8 visionary Directors** to join the Founding Chairperson, **Timothy Padayachee**, in guiding the Initiative's growth and governance.  
-Learn more about the open positions and nomination process on our official page.
+### Infrastructure and School Upgrades
+Enhancing classrooms, safety, sanitation, technology, and facilities to create an environment where learners can excel.
 
----
+### Student Welfare and Support
+Providing support frameworks for mental health, nutrition, academic assistance, and holistic learner wellness.
 
-## 🌐 Live Site
+### Future Skills and Technology Enablement
+Introducing robotics, coding, digital literacy, AI training, and real-world career pathways that prepare learners for the modern economy.
 
-Once published via GitHub Pages, access the announcement here:  
-👉 **[https://timrex800.github.io/Earlington_Legacy_Initiative/](https://timrex800.github.io/Earlington_Legacy_Initiative/)**
+### Community and Alumni Engagement
+Strengthening social cohesion through alumni partnerships, mentorship programmes, family involvement, and community empowerment.
 
----
+## Governance Framework
 
-## ⚙️ Repository Info
+The Earlington Legacy Initiative (NPC) operates under a transparent governance architecture that aligns to South African corporate, nonprofit, and regulatory standards.
 
-- **Branch:** `main`  
-- **Build:** Static HTML with external CSS/JS
-- **Deployment:** [GitHub Pages](https://pages.github.com/)  
-- **Main File:** `index.html`  
+### Board of Directors
 
-### Repository Structure
-```
-/
-├── index.html          # Main HTML file
-├── css/                # Stylesheet files
-│   └── styles.css      # Main stylesheet
-├── js/                 # JavaScript files
-│   └── main.js         # Main JavaScript functionality
-├── assets/             # Static assets
-│   └── images/         # Image files
-└── docs/               # Documentation
-    └── cleanup_report.md  # Repository cleanup documentation
-```
+The Board has been fully constituted.
+The nomination and selection process is now closed.
+No further applications will be accepted.
 
-To preview locally:
-```bash
-# Clone this repository
-git clone https://github.com/Timrex800/Earlington_Legacy_Initiative.git
+The Board oversees:
+• Strategic direction
+• Governance and fiduciary stewardship
+• Ethical leadership
+• Long-term programme and financial oversight
+• Compliance, risk management, and stakeholder accountability
 
-# Open in your browser
-cd Earlington_Legacy_Initiative
-start index.html   # (Windows)
-open index.html    # (macOS)
-```bash
-# Clone this repository
-git clone https://github.com/Timrex800/Earlington_Legacy_Initiative.git
+Committee structures, KPIs, mandates, and governance policies will be published on the final public site.
 
-# Open in your browser
-cd Earlington_Legacy_Initiative
-start index.html   # (Windows)
-open index.html    # (macOS)
+## Compliance and Regulatory Roadmap
+
+The Initiative follows a strict multi-stage compliance lifecycle.
+
+### Step 1. NPC Registration – CIPC
+Formal incorporation, MOI adoption, Director appointment, and statutory filings.
+
+### Step 2. NPO Registration – Department of Social Development
+Nonprofit registration to enhance credibility, reporting governance, and donor eligibility.
+
+### Step 3. PBO/18A Registration – SARS
+Authorisation to issue Section 18A tax-deductible receipts to individual and corporate donors.
+This enhances donor confidence and supports sustainable fundraising.
+
+### Annual Compliance Calendar
+The Initiative adheres to a regulated schedule that covers:
+• CIPC annual returns
+• DSD narrative and financial reports
+• SARS tax submissions
+• Board and subcommittee governance cycles
+• Annual General Meeting requirements
+
+The full compliance calendar will be published on the production website.
+
+## Digital and Infrastructure Blueprint
+
+The Initiative is building a modern education technology ecosystem tailored for long-term sustainability.
+
+Key components include:
+• Google Workspace for Nonprofits architecture for communication, governance, and learning
+• Chromebook and ChromeOS device ecosystem
+• Robotics and AI lab integration
+• Afrihost + VUMA fibre sponsorship for high-capacity connectivity
+• School-wide digital transformation and blended-learning model
+• Multi-domain architecture
+• earlingtonlegacy.org.za
+• earlingtonsecondary.org.za
+
+This blueprint supports future learning, operational excellence, and secure digital infrastructure.
+
+## Fundraising and Donor Strategy
+
+The final website will include a full donor-engagement and stewardship framework.
+
+Key Components
+• Donor Portal
+• Tiered giving levels
+• Corporate sponsor packages
+• Receipt workflow aligned to future SARS 18A compliance
+• Donor reporting and impact measurement
+• Visible recognition platforms
+• Interactive Digital Legacy Wall that highlights donor contributions through dynamic animations and visual storytelling
+
+This strategy ensures both transparency and long-term financial sustainability.
+
+## Website Status – GitHub Pages
+
+This repository powers the official public-facing website.
+The website is still under construction and will be published here:
+
+https://timrex800.github.io/Earlington_Legacy_Initiative/
