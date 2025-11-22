@@ -15,7 +15,10 @@ export default function ImpactTransparency() {
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-2xl shadow-lg mb-12 border-l-4 border-green-500">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Featured Success: Mathematics Excellence</h3>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Thirteen Grade 12 students achieved distinction levels in mathematics, a 40% improvement from previous year. This success demonstrates the impact of our focused academic support programs and dedicated volunteer tutoring.
+            Thirteen Grade 12 learners at Earlington Secondary School achieved distinctions in Mathematics a 40% improvement from the previous year. This outstanding achievement reflects the commitment and expertise of Principal Mr D Archary and his dedicated Mathematics teaching team.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The Earlington Legacy Initiative NPC has been established to complement and expand upon these results by raising funds for educational infrastructure, digital resources, and academic support programs that will ensure sustained excellence for all students.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg text-center shadow-sm">
