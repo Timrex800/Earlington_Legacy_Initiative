@@ -31,5 +31,6 @@ export default defineConfig(({ mode }) => {
       assetsDir: 'assets',
       sourcemap: false,
     },
+    base: '/Earlington_Legacy_Initiative/',
   };
 });
