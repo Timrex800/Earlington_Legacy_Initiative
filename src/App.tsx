@@ -4,21 +4,21 @@ import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import ImpactStats from './components/sections/ImpactStats';
 import LegacyWall from './components/sections/LegacyWall';
-import StrategicPillars from './components/sections/StrategicPillars';
-import About from './components/sections/About';
-import UbuntuBridge from './components/sections/UbuntuBridge';
-import ImpactTransparency from './components/sections/ImpactTransparency';
-import Contact from './components/sections/Contact';
-import DonationFlow from './components/features/DonationFlow';
-import Volunteer from './components/sections/Volunteer';
-import Leadership from './components/sections/Leadership';
+import StrategicPillars from '@/components/sections/StrategicPillars';
+import About from '@/components/sections/About';
+import UbuntuBridge from '@/components/sections/UbuntuBridge';
+import ImpactTransparency from '@/components/sections/ImpactTransparency';
+import Contact from '@/components/sections/Contact';
+import DonationFlow from '@/components/features/DonationFlow';
+import Volunteer from '@/components/sections/Volunteer';
+import Leadership from '@/components/sections/Leadership';
 
 function App() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
     "name": "Earlington Legacy Initiative",
-    "url": "https://earlingtonlegacy.co.za",
+    "url": "https://timrex800.github.io/Earlington_Legacy_Initiative/",
     "logo": "https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png",
     "description": "Transforming Earlington Secondary School into a centre of excellence.",
     "address": {
@@ -30,7 +30,7 @@ function App() {
     },
     "potentialAction": {
       "@type": "DonateAction",
-      "target": "https://earlingtonlegacy.co.za/#donate",
+      "target": "https://timrex800.github.io/Earlington_Legacy_Initiative/#donate",
       "name": "Donate to Earlington Legacy Initiative"
     }
   };
