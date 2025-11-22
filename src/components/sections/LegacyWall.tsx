@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import ParticlesBackground from '../ui/ParticlesBackground';
 
 export default function LegacyWall() {
   // Deterministic generation of bricks
@@ -11,8 +12,10 @@ export default function LegacyWall() {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+      <ParticlesBackground />
+      <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Digital Legacy Wall</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
