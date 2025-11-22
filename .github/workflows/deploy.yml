@@ -37,9 +37,12 @@ jobs:
 
       - name: Build for production
         env:
+          VITE_APP_TITLE: ${{ secrets.VITE_APP_TITLE }}
+          VITE_PUBLIC_URL: ${{ secrets.VITE_PUBLIC_URL }}
+          VITE_APP_OG_IMAGE: ${{ secrets.VITE_APP_OG_IMAGE }}
+          VITE_APP_LOGO_PLACEHOLDER: ${{ secrets.VITE_APP_LOGO_PLACEHOLDER }}
           VITE_UMAMI_ENDPOINT: ${{ secrets.VITE_UMAMI_ENDPOINT }}
           VITE_UMAMI_SITE_ID: ${{ secrets.VITE_UMAMI_SITE_ID }}
-          VITE_PUBLIC_URL: ${{ secrets.VITE_PUBLIC_URL }}
         run: npm run build
 
       - name: Run accessibility checks (axe)
@@ -68,7 +71,10 @@ jobs:
 
       - name: Build production
         env:
+          VITE_APP_TITLE: ${{ secrets.VITE_APP_TITLE }}
           VITE_PUBLIC_URL: ${{ secrets.VITE_PUBLIC_URL }}
+          VITE_APP_OG_IMAGE: ${{ secrets.VITE_APP_OG_IMAGE }}
+          VITE_APP_LOGO_PLACEHOLDER: ${{ secrets.VITE_APP_LOGO_PLACEHOLDER }}
           VITE_UMAMI_ENDPOINT: ${{ secrets.VITE_UMAMI_ENDPOINT }}
           VITE_UMAMI_SITE_ID: ${{ secrets.VITE_UMAMI_SITE_ID }}
         run: npm run build
