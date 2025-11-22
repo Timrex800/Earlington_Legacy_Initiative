@@ -25,8 +25,6 @@
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Vite will replace import.meta.env variables at runtime in scripts -->
   </head>
 
   <body>
@@ -35,23 +33,11 @@
       import "/src/main.tsx";
     </script>
 
-    <!-- Umami analytics: loaded conditionally by runtime using env variables to avoid exposing secrets in HTML -->
-    <script>
-      (function () {
-        try {
-          const endpoint = import.meta.env.VITE_UMAMI_ENDPOINT;
-          const siteId = import.meta.env.VITE_UMAMI_SITE_ID;
-          if (endpoint && siteId) {
-            const s = document.createElement("script");
-            s.defer = true;
-            s.src = endpoint + "/umami.js";
-            s.setAttribute("data-website-id", siteId);
-            document.head.appendChild(s);
-          }
-        } catch (e) {
-          console.error("Umami init failed", e);
-        }
-      })();
+    <!-- Umami Analytics -->
+    <script
+      defer
+      src="%VITE_UMAMI_ENDPOINT%/umami.js"
+      data-website-id="%VITE_UMAMI_SITE_ID%">
     </script>
   </body>
 </html>
