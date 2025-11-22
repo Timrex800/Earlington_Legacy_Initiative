@@ -19,7 +19,6 @@ export default function ParticlesBackground() {
         canvas.height = canvas.parentElement.offsetHeight;
       }
     };
-
     window.addEventListener('resize', resize);
     resize();
 
@@ -43,7 +42,7 @@ export default function ParticlesBackground() {
         this.x = Math.random() * canvas!.width;
         this.y = Math.random() * canvas!.height;
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 0.5 + 0.5;
+        const speed = Math.random() * 0.5 + 0.5; // base speed
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
         this.size = Math.random() * 1.5 + 0.5;
@@ -53,17 +52,14 @@ export default function ParticlesBackground() {
         const dx = gx - this.x;
         const dy = gy - this.y;
         const distSq = dx * dx + dy * dy;
-        const force = 100 / (distSq + 1000); // Default speed factor 1
-        
+        // Speed factor reduced to 0.5 (original 100 -> 50)
+        const force = 50 / (distSq + 1000);
         this.vx += dx * force * dt;
         this.vy += dy * force * dt;
-        
         this.vx *= 0.99;
         this.vy *= 0.99;
-        
         this.x += this.vx * dt;
         this.y += this.vy * dt;
-        
         if (this.x < -10) this.x = canvas!.width + 10;
         if (this.x > canvas!.width + 10) this.x = -10;
         if (this.y < -10) this.y = canvas!.height + 10;
@@ -81,7 +77,8 @@ export default function ParticlesBackground() {
       particles = Array.from({ length: count }, () => new Particle());
     };
 
-    createParticles(100); // Default count
+    // Updated defaults per user request
+    createParticles(4000);
 
     const pointer = { x: canvas.width / 2, y: canvas.height / 2 };
 
@@ -96,26 +93,24 @@ export default function ParticlesBackground() {
       const t = e.touches[0];
       handleMove(t.clientX, t.clientY);
     };
-
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('touchmove', onTouchMove, { passive: false });
 
+    const pastelColors = ['#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', '#bae1ff'];
     let last = performance.now();
     const render = (now: number) => {
       const dt = (now - last) / 16;
       last = now;
-
-      ctx.fillStyle = 'rgba(0,0,0,0.85)'; // Default trail
+      // Trail opacity set to 0.3 as requested
+      ctx.fillStyle = 'rgba(0,0,0,0.3)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       particles.forEach(p => {
         p.update(pointer.x, pointer.y, dt);
-        p.draw('#2563EB'); // Default blue color
+        const col = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+        p.draw(col);
       });
-
       animationFrameId = requestAnimationFrame(render);
     };
-
     render(performance.now());
 
     return () => {
