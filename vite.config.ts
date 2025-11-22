@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
+    base: '/Earlington_Legacy_Initiative/',
     plugins: [
       react(),
       createHtmlPlugin({
@@ -15,7 +16,7 @@ export default defineConfig(({ mode }) => {
           data: {
             VITE_APP_TITLE: env.VITE_APP_TITLE || 'Earlington Legacy Initiative',
             VITE_APP_OG_IMAGE: env.VITE_APP_OG_IMAGE || '/og-image.jpg',
-            VITE_PUBLIC_URL: env.VITE_PUBLIC_URL || 'https://earlingtonlegacy.co.za',
+            VITE_PUBLIC_URL: env.VITE_PUBLIC_URL || 'https://timrex800.github.io/Earlington_Legacy_Initiative',
             VITE_APP_LOGO_PLACEHOLDER: env.VITE_APP_LOGO_PLACEHOLDER || '/favicon.png',
           },
         },
