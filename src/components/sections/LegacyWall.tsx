@@ -4,7 +4,7 @@ import ParticlesBackground from '../ui/ParticlesBackground';
 export default function LegacyWall() {
   // Deterministic generation of bricks
   const bricks = useMemo(() => {
-    return Array.from({ length: 156 }, (_, i) => ({
+    return Array.from({ length: 25 }, (_, i) => ({
       id: i,
       opacity: Math.max(0.3, Math.random() * 0.8 + 0.2), // Random opacity for visual texture
       color: Math.random() > 0.9 ? '#EF4444' : '#DC2626' // Slight color variation

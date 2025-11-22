@@ -3,6 +3,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
 import ImpactStats from './components/sections/ImpactStats';
+import ImpactFeature from './components/sections/ImpactFeature';
 import LegacyWall from './components/sections/LegacyWall';
 import StrategicPillars from '@/components/sections/StrategicPillars';
 import About from '@/components/sections/About';
@@ -46,6 +47,7 @@ function App() {
       <main className="flex-grow">
         <Hero />
         <ImpactStats />
+        <ImpactFeature />
         <LegacyWall />
         <StrategicPillars />
         <About />
