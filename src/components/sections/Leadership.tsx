@@ -22,8 +22,7 @@ export default function Leadership() {
             />
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Timothy Padayachee</h3>
-              <p className="text-lg text-primary font-semibold mb-2">Chairman & Programme Director</p>
-              <p className="text-gray-700 mb-3">Director of JoziSocial</p>
+              <p className="text-lg text-primary font-semibold mb-2">Founding Chairperson & Programme & Impact Director</p>
               <p className="text-gray-600">Leading the strategic vision and implementation of the Earlington Legacy Initiative, driving transformation and sustainable impact for our community.</p>
             </div>
           </div>
