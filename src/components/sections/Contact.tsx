@@ -16,7 +16,7 @@ export default function Contact() {
           <div>
             <div className="bg-white p-8 rounded-2xl shadow-lg mb-6">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start">
                   <Phone className="w-6 h-6 text-primary mr-3 mt-1" />
@@ -30,7 +30,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">timothy@hashlytics.co.za</p>
+                    <p className="text-gray-600">info@earlingtonlegacy.org.za</p>
                   </div>
                 </div>
 
@@ -38,7 +38,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-900">Address</p>
-                    <p className="text-gray-600">2 Earlcroft Close<br/>Phoenix 4068<br/>South Africa</p>
+                    <p className="text-gray-600">2 Earlcroft Close<br />Phoenix 4068<br />South Africa</p>
                   </div>
                 </div>
 
@@ -46,7 +46,7 @@ export default function Contact() {
                   <Clock className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-900">Office Hours</p>
-                    <p className="text-gray-600">Mon-Fri: 8:00 AM - 4:00 PM<br/>Sat: 9:00 AM - 12:00 PM</p>
+                    <p className="text-gray-600">Mon-Fri: 8:00 AM - 4:00 PM<br />Sat: 9:00 AM - 12:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -69,17 +69,17 @@ export default function Contact() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                 <input type="text" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your name" required />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                 <input type="email" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your@email.com" required />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Phone (Optional)</label>
                 <input type="tel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+27 XX XXX XXXX" />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                 <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
@@ -90,12 +90,12 @@ export default function Contact() {
                   <option value="general">General Inquiry</option>
                 </select>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                 <textarea rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="How can we help you?" required></textarea>
               </div>
-              
+
               <button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-full transition duration-300">
                 Send Message
               </button>

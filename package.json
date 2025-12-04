@@ -40,5 +40,6 @@
     "jsdom": "^23.0.0",
     "@testing-library/react": "^14.1.2",
     "axe-core": "^4.8.2"
-  }
+  },
+  "homepage": "https://timrex800.github.io/Earlington_Legacy_Initiative/"
 }
