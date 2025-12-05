@@ -8,31 +8,31 @@ RewriteRule ^(.*)$ https://% { HTTP_HOST }% { REQUEST_URI } [L, R=301]
 # ----------------------------------------------------------------------
 # 2. Caching Rules (Performance Optimization )
 # ----------------------------------------------------------------------
-<IfModule mod_expires.c>
-ExpiresActive On
-# Default is 1 hour
-ExpiresDefault "access plus 1 hour"
-
-# Images (WebP, JPEG, PNG, GIF, SVG) - Cache for 1 year
-ExpiresByType image/webp "access plus 1 year"
-ExpiresByType image/jpeg "access plus 1 year"
-ExpiresByType image/png "access plus 1 year"
-ExpiresByType image/gif "access plus 1 year"
-ExpiresByType image/svg+xml "access plus 1 year"
-
-# CSS and JavaScript - Cache for 1 month
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/javascript "access plus 1 month"
-ExpiresByType text/javascript "access plus 1 month"
-
-# Fonts - Cache for 1 month
-ExpiresByType application/x-font-ttf "access plus 1 month"
-ExpiresByType font/opentype "access plus 1 month"
-ExpiresByType application/x-font-woff "access plus 1 month"
-ExpiresByType application/x-font-woff2 "access plus 1 month"
-ExpiresByType application/font-woff "access plus 1 month"
-ExpiresByType application/font-woff2 "access plus 1 month"
-</IfModule>
+# <IfModule mod_expires.c>
+#     ExpiresActive On
+#     # Default is 1 hour
+#     ExpiresDefault "access plus 1 hour"
+#
+#     # Images (WebP, JPEG, PNG, GIF, SVG) - Cache for 1 year
+#     ExpiresByType image/webp "access plus 1 year"
+#     ExpiresByType image/jpeg "access plus 1 year"
+#     ExpiresByType image/png "access plus 1 year"
+#     ExpiresByType image/gif "access plus 1 year"
+#     ExpiresByType image/svg+xml "access plus 1 year"
+#
+#     # CSS and JavaScript - Cache for 1 month
+#     ExpiresByType text/css "access plus 1 month"
+#     ExpiresByType application/javascript "access plus 1 month"
+#     ExpiresByType text/javascript "access plus 1 month"
+#
+#     # Fonts - Cache for 1 month
+#     ExpiresByType application/x-font-ttf "access plus  month"
+#     ExpiresByType font/opentype "access plus  month"
+#     ExpiresByType application/x-font-woff "access plus  month"
+#     ExpiresByType application/x-font-woff2 "access plus  month"
+#     ExpiresByType application/font-woff "access plus  month"
+#     ExpiresByType application/font-woff2 "access plus  month"
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # 3. Single Page Application (SPA) Routing
@@ -40,14 +40,14 @@ ExpiresByType application/font-woff2 "access plus 1 month"
 # This rule ensures that all routes are handled by the React application
 # by redirecting all requests that are not for an existing file or directory
 # back to the index.html file.
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond % { REQUEST_FILENAME } !-f
-RewriteCond % { REQUEST_FILENAME } !-d
-RewriteRule . /index.html [L]
-</IfModule>
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteBase /
+#     RewriteRule ^index\.html$ - [L]
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteRule . /index.html [L]
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # 4. Security Headers (Google Ad Grants Compliance)
