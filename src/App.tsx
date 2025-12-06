@@ -13,13 +13,15 @@ import Contact from '@/components/sections/Contact';
 import DonationFlow from '@/components/features/DonationFlow';
 import Volunteer from '@/components/sections/Volunteer';
 import Leadership from '@/components/sections/Leadership';
+import { ReasonerPanel } from '@/components/ReasonerPanel';
 
 function App() {
+  // CRITICAL FIX: Updated JSON-LD to use the live domain (earlingtonlegacy.org.za)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
     "name": "Earlington Legacy Initiative",
-    "url": "https://timrex800.github.io/Earlington_Legacy_Initiative/",
+    "url": "https://earlingtonlegacy.org.za/", // FIXED: Use live domain
     "logo": "https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png",
     "description": "Transforming Earlington Secondary School into a centre of excellence.",
     "address": {
@@ -31,7 +33,7 @@ function App() {
     },
     "potentialAction": {
       "@type": "DonateAction",
-      "target": "https://timrex800.github.io/Earlington_Legacy_Initiative/#donate",
+      "target": "https://earlingtonlegacy.org.za/#donate", // FIXED: Use live domain
       "name": "Donate to Earlington Legacy Initiative"
     }
   };
@@ -40,7 +42,7 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
+          {JSON.stringify(jsonLd )}
         </script>
       </Helmet>
       <Navbar />
@@ -57,6 +59,7 @@ function App() {
         <Volunteer />
         <Leadership />
         <Contact />
+        <ReasonerPanel />
       </main>
       <Footer />
     </div>
