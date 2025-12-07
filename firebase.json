@@ -18,10 +18,11 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "redirects": [
       {
-        "source": "/reasoner/**",
-        "function": "reasoner"
+        "source": "**",
+        "destination": "https://earlingtonlegacy.org.za",
+        "type": 301
       }
     ]
   }
