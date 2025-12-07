@@ -13,7 +13,7 @@ export async function callReasoner(request: ReasonerRequest): Promise<ReasonerRe
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      // TODO: Add authentication header if required
+      'Authorization': `Bearer ${import.meta.env.VITE_STRATAMIND_API_KEY || ''}`,
     },
     body: JSON.stringify(request),
   });

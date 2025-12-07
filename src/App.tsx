@@ -13,7 +13,8 @@ import Contact from '@/components/sections/Contact';
 import DonationFlow from '@/components/features/DonationFlow';
 import Volunteer from '@/components/sections/Volunteer';
 import Leadership from '@/components/sections/Leadership';
-import { ReasonerPanel } from '@/components/ReasonerPanel';
+import { ReasonerPanel } from './components/ReasonerPanel';
+
 
 function App() {
   // CRITICAL FIX: Updated JSON-LD to use the live domain (earlingtonlegacy.org.za)
@@ -59,8 +60,9 @@ function App() {
         <Volunteer />
         <Leadership />
         <Contact />
-        <ReasonerPanel />
+
       </main>
+      <ReasonerPanel />
       <Footer />
     </div>
   );
