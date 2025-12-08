@@ -42,7 +42,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-primary mr-3 mt-1" />
                   <div>
                     <p className="font-semibold text-gray-900">Address</p>
-                    <p className="text-gray-600">2 Earlcroft Close<br />Phoenix 4068<br />South Africa</p>
+                    <p className="text-gray-600">7 Gildcroft Close<br />Phoenix 4068<br />South Africa</p>
                   </div>
                 </div>
 

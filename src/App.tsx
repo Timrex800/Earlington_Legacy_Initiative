@@ -28,7 +28,7 @@ function App() {
     "description": "Transforming Earlington Secondary School into a centre of excellence.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2 Earlcroft Close",
+      "streetAddress": "7 Gildcroft Close",
       "addressLocality": "Phoenix",
       "postalCode": "4068",
       "addressCountry": "ZA"
