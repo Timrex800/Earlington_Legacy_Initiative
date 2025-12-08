@@ -5,10 +5,14 @@ export default function About() {
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Earlington Legacy Initiative</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">About Earlington Legacy Initiative NPC</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Building a lasting legacy of educational excellence and opportunity
           </p>
+          <div className="inline-block bg-blue-50 px-6 py-3 rounded-full border border-blue-100">
+            <p className="text-primary font-semibold">Registered Non-Profit Company</p>
+            <p className="text-sm text-gray-500">Registration: 2025/931583/08</p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">

@@ -49,7 +49,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Earlington Legacy Initiative. All rights reserved.</p>
+          <p className="mb-2">&copy; 2025 Earlington Legacy Initiative NPC | Registration: 2025/931583/08</p>
+          <p>A Non-Profit Company supporting Earlington Secondary School</p>
         </div>
       </div>
     </footer>

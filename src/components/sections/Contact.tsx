@@ -6,9 +6,13 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
             We'd love to hear from you. Get in touch to learn more about our work or get involved.
           </p>
+          <div className="text-sm text-gray-500">
+            <p className="font-semibold text-gray-700">Earlington Legacy Initiative NPC</p>
+            <p>Registration: 2025/931583/08 | Registered Non-Profit Company</p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">

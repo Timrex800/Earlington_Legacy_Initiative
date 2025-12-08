@@ -13,6 +13,7 @@ import Contact from '@/components/sections/Contact';
 import DonationFlow from '@/components/features/DonationFlow';
 import Volunteer from '@/components/sections/Volunteer';
 import Leadership from '@/components/sections/Leadership';
+import TeacherRecognition from '@/components/sections/TeacherRecognition';
 import { ReasonerPanel } from './components/ReasonerPanel';
 
 
@@ -21,7 +22,7 @@ function App() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
-    "name": "Earlington Legacy Initiative",
+    "name": "Earlington Legacy Initiative NPC",
     "url": "https://earlingtonlegacy.org.za/", // FIXED: Use live domain
     "logo": "https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png",
     "description": "Transforming Earlington Secondary School into a centre of excellence.",
@@ -51,6 +52,7 @@ function App() {
         <Hero />
         <ImpactStats />
         <ImpactFeature />
+        <TeacherRecognition />
         <LegacyWall />
         <StrategicPillars />
         <About />

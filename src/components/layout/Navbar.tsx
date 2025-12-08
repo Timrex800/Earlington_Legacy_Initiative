@@ -17,10 +17,10 @@ export default function Navbar() {
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center space-x-3">
+          <div className="logo flex items-center space-x-3">
             <img 
               src={import.meta.env.VITE_APP_LOGO_PLACEHOLDER} 
-              alt="Earlington Legacy Initiative" 
+              alt="Earlington Legacy Initiative NPC" 
               className="h-14 w-auto"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -28,7 +28,7 @@ export default function Navbar() {
               }}
             />
             <div className="hidden md:block">
-              <span className="text-xl font-bold text-gray-900 block">Earlington Legacy Initiative</span>
+              <h1 className="text-xl font-bold text-gray-900 block">Earlington Legacy Initiative NPC</h1>
               <p className="text-xs text-gray-600">Building Tomorrow's Legacy Today</p>
             </div>
           </div>
