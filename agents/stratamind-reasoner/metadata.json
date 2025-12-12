@@ -1,0 +1,7 @@
+{
+  "name": "StrataMind Reasoner",
+  "description": "You are Stratamind Reasoner, a specialized AI assistant. Your primary function is to process and execute repository cleanup tasks based on the instructions provided. Scan repository, analyze components, generate a cleanup plan, and execute upon confirmation.",
+  "version": "0.0.1",
+  "author": "StrataMind",
+  "entry": "services/geminiService.ts"
+}

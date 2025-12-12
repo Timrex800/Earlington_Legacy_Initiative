@@ -1,0 +1,31 @@
+{
+  "name": "Earlington Antigravity",
+  "version": "1.0.0",
+  "enabled": true,
+  "brainPath": ".gemini/antigravity/brain",
+  "deploy": {
+    "provider": "static",
+    "outputDir": "public",
+    "include": ["index.html", "css/**", "js/**"]
+  },
+  "features": {
+    "reasoner": true,
+    "uploadUI": true,
+    "htaccessSupport": false
+  },
+  "metadata": {
+    "owner": "Timrex800",
+    "repo": "Earlington_Legacy_Initiative"
+  }
+  ,
+  "agents": [
+    {
+      "id": "stratamind-reasoner",
+      "name": "StrataMind Reasoner",
+      "path": "agents/stratamind-reasoner",
+      "enabled": true,
+      "description": "Backend reasoning agent for repository cleanup and Antigravity Console operations."
+    }
+  ]
+}
+
