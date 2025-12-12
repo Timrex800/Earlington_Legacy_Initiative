@@ -10,12 +10,18 @@ export interface ReasonerRequest {
 
 export interface ReasonerResponse {
   result: string;
+  // Optional metadata: deterministic id and trace used for auditing and reproducibility
+  meta?: { id?: string; trace?: string[] };
 }
+
+import { STRATAMIND_ENDPOINT, STRATAMIND_REQUEST_TIMEOUT, STRATAMIND_ENABLED, STRATAMIND_ENDPOINT_PROVIDED } from './config';
+import { ReasonerCore } from './core';
 
 export async function callReasoner(request: ReasonerRequest): Promise<ReasonerResponse> {
   const messages = request.messages || (request.prompt ? [{ role: 'user', content: request.prompt }] : []);
   const lastUserMessage = messages.filter(m => m.role === 'user').pop()?.content || '';
-  const apiKey = import.meta.env.VITE_STRATAMIND_API_KEY;
+  // Read endpoint and flags from config. Never include client-side secrets.
+  // STRATAMIND_ENDPOINT is configured via Vite at build time (VITE_STRATAMIND_ENDPOINT).
 
   // 1. Try to call the Serverless Backend (if running in an environment that supports it)
   // We skip this if we know we are in a purely static dev mode without proxy, 
@@ -24,13 +30,12 @@ export async function callReasoner(request: ReasonerRequest): Promise<ReasonerRe
     // Only attempt backend fetch if we aren't explicitly avoiding it or if we have an API key that implies external service
     // However, for this fix, we try the local function endpoint first.
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout for backend check
+    const timeoutId = setTimeout(() => controller.abort(), STRATAMIND_REQUEST_TIMEOUT); // timeout for backend check
 
-    const response = await fetch('/.netlify/functions/reasoner', {
+    const response = await fetch(STRATAMIND_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey || ''}`,
       },
       body: JSON.stringify({ messages }),
       signal: controller.signal
@@ -50,12 +55,19 @@ export async function callReasoner(request: ReasonerRequest): Promise<ReasonerRe
   }
 
   // 2. Client-Side Simulation (Fallback)
+  // If STRATAMIND_ENABLED is explicitly false and no endpoint is configured, disable simulation
+  if (!STRATAMIND_ENABLED && !STRATAMIND_ENDPOINT_PROVIDED) {
+    console.warn('Stratamind Reasoner: Disabled via VITE_STRATAMIND_ENABLED and no endpoint is configured.');
+    return { result: 'Stratamind Reasoner is not configured in this environment.' };
+  }
   console.warn('Stratamind Reasoner: Running in Local Simulation Mode.');
   await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate think time
 
-  // Advanced Keyword Matching for Simulation
+  // Advanced Keyword Matching for Simulation. Use deterministic `ReasonerCore` to produce stable trace.
   let mockResponse = '';
   const lowerMsg = lastUserMessage.toLowerCase();
+
+  const core = new ReasonerCore(lastUserMessage || undefined);
 
   if (lowerMsg.includes('hello') || lowerMsg.includes('hi')) {
     mockResponse = "Hello! I am StrataMind, running locally in your browser. I can help visualize how the Reasoner integrates with your project.";
@@ -77,5 +89,8 @@ To connect a real intelligence:
 - Provide a valid API Key.`;
   }
 
-  return { result: mockResponse };
+  const coreResponse = core.analyze([{ role: 'user', content: lastUserMessage }]);
+  // Merge the simulated text with the deterministic core response and include metadata for auditing.
+  const combined = `${mockResponse}\n\n---\n${coreResponse.result}`;
+  return { result: combined, meta: { id: coreResponse.id, trace: coreResponse.trace } };
 }
