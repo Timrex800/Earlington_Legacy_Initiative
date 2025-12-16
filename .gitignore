@@ -39,3 +39,7 @@ coverage/
 
 # Optional: general logs
 *.log
+
+# Firebase emulator/local state
+/.firebase/
+Earlington_Legacy_Initiative/.firebase/
