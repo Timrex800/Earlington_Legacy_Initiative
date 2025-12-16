@@ -1,45 +1,26 @@
-# OS generated files
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# IDE / Editor directories and files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
+# Cloudinary cache
+.cloudinary/
 
-# Environment files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build outputs
-build/
-out/
-# dist/  # Uncomment if you want to ignore dist folder
-
-# Cache directories
-.cache/
-.npm/
-.eslintcache
-
-# Optional: test coverage
-coverage/
-
-# Optional: general logs
-*.log
-
-# Firebase emulator/local state
-/.firebase/
-Earlington_Legacy_Initiative/.firebase/

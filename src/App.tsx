@@ -6,6 +6,9 @@ import ImpactStats from "./components/sections/ImpactStats";
 import ImpactFeature from "./components/sections/ImpactFeature";
 import LegacyWall from "./components/sections/LegacyWall";
 import StrategicPillars from "@/components/sections/StrategicPillars";
+import DeveloperCommunity from "@/components/sections/DeveloperCommunity";
+import Events from "@/components/sections/Events";
+import Resources from "@/components/sections/Resources";
 import About from "@/components/sections/About";
 import UbuntuBridge from "@/components/sections/UbuntuBridge";
 import ImpactTransparency from "@/components/sections/ImpactTransparency";
@@ -22,10 +25,10 @@ function App() {
     "@context": "https://schema.org",
     "@type": "NGO",
     name: "Earlington Legacy Initiative NPC",
-    url: "https://earlingtonlegacy.org.za/", // FIXED: Use live domain
+    url: "https://earlingtonlegacy.org.za/",
     logo: "https://res.cloudinary.com/drj03twbh/image/upload/v1761950572/Earlington%20Legacy%20Initiative%20LOGO.png",
     description:
-      "Transforming Earlington Secondary School into a centre of excellence.",
+      "Transforming Earlington Secondary School into a centre of excellence and bridging aspiring talent with professional developers in Phoenix, KZN.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "7 Gildcroft Close",
@@ -33,11 +36,18 @@ function App() {
       postalCode: "4068",
       addressCountry: "ZA",
     },
-    potentialAction: {
-      "@type": "DonateAction",
-      target: "https://earlingtonlegacy.org.za/#donate", // FIXED: Use live domain
-      name: "Donate to Earlington Legacy Initiative",
-    },
+    potentialAction: [
+      {
+        "@type": "DonateAction",
+        target: "https://earlingtonlegacy.org.za/#donate",
+        name: "Donate to Earlington Legacy Initiative",
+      },
+      {
+        "@type": "JoinAction",
+        target: "https://earlingtonlegacy.org.za/#developer-community",
+        name: "Join Developer Community",
+      }
+    ],
   };
 
   return (
@@ -53,6 +63,9 @@ function App() {
         <TeacherRecognition />
         <LegacyWall />
         <StrategicPillars />
+        <DeveloperCommunity />
+        <Events />
+        <Resources />
         <About />
         <UbuntuBridge />
         <ImpactTransparency />
@@ -61,7 +74,6 @@ function App() {
         <Leadership />
         <Contact />
       </main>
-
 
       <Footer />
     </div>

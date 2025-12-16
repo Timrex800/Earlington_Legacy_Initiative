@@ -1,0 +1,15 @@
+name: production
+deployment_branch_policy:
+  protected_branches: true
+  allow: []
+protection_rules:
+  required_reviewers:
+    - type: team
+      id: owners
+  wait_timer: 15m
+secrets:
+  - name: REASONER_API_KEY
+  - name: OPENAI_API_KEY
+environment_variables:
+  NODE_ENV: production
+  VITE_REASONER_ENABLED: "true"

@@ -10,8 +10,8 @@ export default function Hero() {
         <h1 className="text-5xl md:text-7xl font-extrabold mb-4 animate-fade-in">
           Transforming Education at<br/>Earlington Secondary School
         </h1>
-        <p className="text-2xl md:text-3xl mb-6 font-light animate-fade-in text-blue-200" style={{ animationDelay: '0.2s' }}>
-          Building Tomorrow's Legacy Today
+        <p className="text-2xl md:text-3xl mb-4 font-light animate-fade-in text-blue-200" style={{ animationDelay: '0.2s' }}>
+          Bridging Aspiring Talent with Professional Developers in KZN North
         </p>
         <p className="text-xl font-semibold mb-8 text-accent animate-fade-in" style={{ animationDelay: '0.3s' }}>
           Supporting Our Teachers, Empowering Our Students
@@ -20,6 +20,9 @@ export default function Hero() {
           The exceptional teaching team at Earlington Secondary School has achieved a 40% improvement in academic excellence—a testament to their dedication and skill. The Earlington Legacy Initiative NPC amplifies their impact by providing strategic support across four key areas: modern infrastructure, comprehensive student welfare programs, future-ready skills development, and strong community partnerships.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <a href="#developer-community" className="bg-accent text-white hover:bg-accent-dark font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl">
+            Join the Developer Community
+          </a>
           <a href="#donate" className="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-xl">
             Support Our Mission
           </a>

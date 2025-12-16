@@ -1,0 +1,64 @@
+name: Test Cloudinary Connection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Cloudinary
+        run: npm install cloudinary
+
+      - name: Verify Credentials and Connection
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          echo "🔍 Checking Cloudinary configuration..."
+          
+          if [[ -z "$CLOUDINARY_CLOUD_NAME" ]]; then
+            echo "❌ Error: CLOUDINARY_CLOUD_NAME secret is missing"
+            exit 1
+          fi
+          
+          if [[ -z "$CLOUDINARY_API_KEY" ]]; then
+            echo "❌ Error: CLOUDINARY_API_KEY secret is missing"
+            exit 1
+          fi
+
+          if [[ -z "$CLOUDINARY_API_SECRET" ]]; then
+            echo "❌ Error: CLOUDINARY_API_SECRET secret is missing"
+            exit 1
+          fi
+
+          echo "✅ All secrets are present."
+          
+          # Create a simple connection test script
+          cat > test.js << 'EOF'
+          const cloudinary = require('cloudinary').v2;
+          
+          cloudinary.config({
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+            api_key: process.env.CLOUDINARY_API_KEY,
+            api_secret: process.env.CLOUDINARY_API_SECRET,
+            secure: true
+          });
+
+          cloudinary.api.ping()
+            .then(result => {
+              console.log('✅ Connection Successful! Status:', result.status);
+            })
+            .catch(error => {
+              console.error('❌ Connection Failed:', error.message);
+              process.exit(1);
+            });
+          EOF
+
+          node test.js

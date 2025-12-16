@@ -6,10 +6,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Pillars', href: '#pillars' },
-    { name: 'Platform', href: '#platform' },
-    { name: 'Impact', href: '#impact' },
+    { name: 'About Us', href: '#about' },
+    { name: 'Our Impact', href: '#impact' },
+    { name: 'Developer Community', href: '#developer-community' },
+    { name: 'Events', href: '#events' },
+    { name: 'Resources', href: '#resources' },
+    { name: 'Get Involved', href: '#donate' },
     { name: 'Contact', href: '#contact' },
   ];
 

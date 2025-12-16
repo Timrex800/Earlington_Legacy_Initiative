@@ -1,0 +1,131 @@
+name: Deploy to Cloudinary
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/images/**'
+      - 'assets/**'
+      - 'src/images/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  upload-to-cloudinary:
+    name: Upload Images to Cloudinary
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install Cloudinary
+        run: npm install cloudinary
+          
+      - name: Upload Images
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          echo "🔄 Starting Cloudinary upload..."
+          echo "Cloud Name: $CLOUDINARY_CLOUD_NAME"
+          
+          # Create upload script
+          cat > upload.js << 'EOF'
+          const cloudinary = require('cloudinary').v2;
+          const fs = require('fs').promises;
+          const path = require('path');
+          
+          // Configure Cloudinary
+          cloudinary.config({
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+            api_key: process.env.CLOUDINARY_API_KEY,
+            api_secret: process.env.CLOUDINARY_API_SECRET,
+            secure: true
+          });
+          
+          // Folders to check
+          const folders = ['public/images', 'assets', 'src/images'];
+          
+          async function uploadImages() {
+            let uploadedCount = 0;
+            
+            for (const folder of folders) {
+              try {
+                // Check if folder exists
+                await fs.access(folder);
+                const files = await fs.readdir(folder);
+                
+                // Filter image files
+                const imageFiles = files.filter(file => 
+                  /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(file)
+                );
+                
+                console.log('📁 Found ' + imageFiles.length + ' images in ' + folder + '/');
+                
+                // Upload each image
+                for (const file of imageFiles) {
+                  const filePath = path.join(folder, file);
+                  const fileName = path.parse(file).name;
+                  
+                  try {
+                    console.log('📤 Uploading: ' + file);
+                    
+                    const result = await cloudinary.uploader.upload(filePath, {
+                      public_id: 'earlington-legacy/' + fileName,
+                      folder: 'earlington-legacy',
+                      use_filename: true,
+                      unique_filename: false,
+                      tags: ['earlington-website', 'github-upload'],
+                      transformation: [
+                        { quality: 'auto', fetch_format: 'auto' }
+                      ]
+                    });
+                    
+                    console.log('✅ Uploaded: ' + result.secure_url);
+                    uploadedCount++;
+                    
+                  } catch (uploadError) {
+                    console.log('❌ Failed to upload ' + file + ':', uploadError.message);
+                  }
+                }
+                
+              } catch (error) {
+                // Folder doesn't exist, skip
+              }
+            }
+            
+            return uploadedCount;
+          }
+          
+          // Run upload
+          uploadImages()
+            .then(count => {
+              console.log('\n🎉 Upload complete! ' + count + ' images uploaded to Cloudinary.');
+              if (count === 0) {
+                console.log('💡 No images found. Add images to:');
+                console.log('   - public/images/');
+                console.log('   - assets/');
+                console.log('   - src/images/');
+              }
+            })
+            .catch(error => {
+              console.error('❌ Upload failed:', error);
+              process.exit(1);
+            });
+          EOF
+          
+          # Run the upload script
+          node upload.js
+          
+      - name: Upload Complete
+        run: echo "✅ Cloudinary upload workflow completed"

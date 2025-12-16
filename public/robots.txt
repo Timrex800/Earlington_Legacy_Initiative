@@ -1,0 +1,40 @@
+# Earlington Legacy Initiative robots.txt
+# https://www.earlingtonlegacy.org.za/
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow search engines from crawling admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Specify the sitemap
+Sitemap: https://www.earlingtonlegacy.org.za/sitemap.xml
+
+# Specific rules for common search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Prevent crawling of unfinished or draft pages (adjust paths as needed)
+# Disallow: /*?draft=true
+# Disallow: /*?preview=true
+
+# Rate limiting for aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

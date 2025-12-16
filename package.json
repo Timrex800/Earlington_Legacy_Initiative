@@ -11,6 +11,11 @@
     "test": "vitest",
     "check:env": "node -e \"console.log('node', process.version)\" && (npm -v || echo 'npm not installed')",
     "test:accessibility": "axe-core"
+    ,
+    "setup:cloudinary": "node scripts/setup-cloudinary.js",
+    "upload:images": "node scripts/upload-images.js",
+    "test:cloudinary": "node scripts/test-connection.js",
+    "deploy:images": "npm run test:cloudinary && npm run upload:images"
   },
   "engines": {
     "node": ">=18",
@@ -25,6 +30,9 @@
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
     "tailwind-merge": "^2.0.0"
+    ,
+    "cloudinary": "^2.0.0",
+    "dotenv": "^16.0.0"
   },
   "devDependencies": {
     "@testing-library/react": "^14.1.2",
@@ -47,6 +55,8 @@
     "vite": "^7.2.7",
     "vite-plugin-html": "^3.2.2",
     "vitest": "^4.0.15"
+    ,
+    "@actions/core": "^1.10.0"
   },
   "homepage": "https://timrex800.github.io/Earlington_Legacy_Initiative/"
 }

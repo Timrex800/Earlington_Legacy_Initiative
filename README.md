@@ -115,3 +115,14 @@ This repository powers the official public-facing website.
 The website is still under construction and will be published here:
 
 https://timrex800.github.io/Earlington_Legacy_Initiative/
+
+## 🖼️ Cloudinary Image Management
+
+This project uses Cloudinary for automated image storage, optimization, and CDN delivery.
+
+### Setup Instructions
+
+1. **Local Setup**:
+	```bash
+	npm run setup:cloudinary
+	```
