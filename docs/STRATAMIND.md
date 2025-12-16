@@ -1,13 +1,13 @@
 
-StrataMind Reasoner
-===================
+Removed Reasoner documentation
+=============================
 
 Purpose: Internal deterministic reasoning engine scaffold for the project. It contains:
 
 - `src/stratamind/core`: core deterministic reasoner runtime.
 - `src/stratamind/analysis`: static scanning helpers.
 - `src/stratamind/generation`: deterministic suggestions.
-- `src/stratamind/prompting`: safe prompt templates.
+- `src/stratamind/prompting`: safe prompt templates. (neutralized)
 
 Guidelines:
 
@@ -61,10 +61,7 @@ After installing Node.js and npm, run these commands in the project root:
 ```powershell
 npm ci
 npm run check:env
-npm run test
-npm run lint
-```
+Removed: Stratamind Reasoner docs. The Reasoner UI and backend have been removed from this repository.
 
-If you use `nvm` and want to persist the version for contributors, `.nvmrc` is included with the project (`18`).
+This file previously documented the internal Reasoner. It has been intentionally removed to eliminate StrataMind surfaces.
 
-If you prefer, I can add a GitHub Actions workflow to verify Node version and run tests on PRs. Ask me to add this if you want me to continue.

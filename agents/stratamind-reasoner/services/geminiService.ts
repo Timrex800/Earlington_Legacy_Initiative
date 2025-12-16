@@ -14,7 +14,8 @@ const getClient = (): GoogleGenAI => {
   return client;
 };
 
-const SYSTEM_PROMPT = `You are StrataMind, a backend AI Engineering Agent operating strictly within the Google Antigravity Console.
+// Removed Stratamind-specific prompts and functionality.
+const SYSTEM_PROMPT = `Removed Stratamind service.`;
 You are NOT a frontend website component. You are the engine running on the backend infrastructure.
 Your mandate is to manage repository cleanup, enforce policies, and generate execution plans.`;
 
@@ -26,7 +27,7 @@ export const generateReasoningLog = async (stage: string, context: string): Prom
       'EXECUTION': 'Applying cleanup actions and sanitizations.',
       'VERIFICATION': 'Integrity checks complete.'
     };
-    return mocks[stage] || `[StrataMind] Processing ${stage}: ${context}`;
+    return mocks[stage] || `[Reasoner] Processing ${stage}: ${context}`;
   }
 
   try {
@@ -45,7 +46,7 @@ export const generateReasoningLog = async (stage: string, context: string): Prom
 
 export const generateCleanupReport = async (stats: any): Promise<string> => {
   if (!process.env.GEMINI_API_KEY) {
-    return `# Antigravity Console - Backend Audit Report\n\nAgent: StrataMind\nTimestamp: ${new Date().toISOString()}\n\nFiles Removed: ${stats.filesRemoved}\nSpace Saved: ${stats.spaceSaved}`;
+    return `# Antigravity Console - Backend Audit Report\n\nAgent: Reasoner (neutralized)\nTimestamp: ${new Date().toISOString()}\n\nFiles Removed: ${stats.filesRemoved}\nSpace Saved: ${stats.spaceSaved}`;
   }
 
   try {
@@ -63,7 +64,7 @@ export const generateCleanupReport = async (stats: any): Promise<string> => {
 };
 
 export const sendChatMessage = async (message: string): Promise<string> => {
-  if (!process.env.GEMINI_API_KEY) return `[StrataMind]: Received: "${message}".`;
+  if (!process.env.GEMINI_API_KEY) return `[Reasoner]: Received: "${message}".`;
 
   try {
     const ai = getClient();

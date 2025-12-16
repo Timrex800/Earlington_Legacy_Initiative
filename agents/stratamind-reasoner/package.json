@@ -1,25 +1,4 @@
 {
-  "name": "stratamind-reasoner-agent",
-  "version": "0.0.1",
-  "private": true,
-  "type": "commonjs",
-  "scripts": {
-    "start": "node run.js"
-  }
-}
-{
-  "name": "stratamind-reasoner",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@google/genai": "^1.33.0"
-  }
+	"_note": "AGENT PACKAGE MARKED FOR DELETION",
+	"message": "Delete the agents/stratamind-reasoner folder to fully remove this AI container and its package metadata."
 }

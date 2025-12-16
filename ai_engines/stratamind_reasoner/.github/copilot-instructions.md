@@ -1,4 +1,4 @@
-Purpose: Guide AI coding agents for productive contributions to the Stratamind Reasoner engine.
+Purpose: Guide AI coding agents for productive contributions to the Reasoner engine.
 
 # Quick Orientation
 - Language: Python 3.11+ (check pyproject.toml / requirements.txt). Use virtual environments or Poetry.
@@ -27,7 +27,7 @@ Purpose: Guide AI coding agents for productive contributions to the Stratamind R
     ```bash
     poetry install
     ```
-- Run the API server (uvicorn recommended if server is ASGI), run from `ai_engines/stratamind_reasoner`:
+- Run the API server (uvicorn recommended if server is ASGI), run from `ai_engines/reasoner_engine`:
   - `uvicorn api.server:app --reload --host localhost --port 8000`
   - Or: `python -m api.server` if packaged as a module
 - Tests: `pytest -q` from the repo root or the subproject folder. Use `--maxfail=1 -q` for quick loops.
@@ -44,7 +44,7 @@ Purpose: Guide AI coding agents for productive contributions to the Stratamind R
 - External AI backends / inference hosts: ensure upstream provider endpoints are configurable through `engine_config.yaml` or environment variables.
 - Auth & CORS: `api/auth_middleware.py` defines how clients authenticate. Ensure local dev uses minimal auth to run emulators but never mirror production keys.
 - VS Code integration: `integrations/vscode/agent_manifest.json` maps capabilities to the manifest and should be kept in sync when adding API endpoints.
-- CLI: `integrations/command_line/stratamind_cli.py` is the local-facing entry for automations and should mirror API behavior used by the UI.
+- CLI: `integrations/command_line/reasoner_cli.py` is the local-facing entry for automations and should mirror API behavior used by the UI.
 
 # Security & Safety
 - `security_policies.yaml` contains rules enforced in runtime and CI. Follow them when adding routes or expanding capabilities.

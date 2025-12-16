@@ -22,22 +22,22 @@ const generateReasoningLog = async (stage, context) => {
       'EXECUTION': 'Applying cleanup actions and sanitizations.',
       'VERIFICATION': 'Integrity checks complete.'
     };
-    return mocks[stage] || `[StrataMind] Processing ${stage}: ${context}`;
+    return mocks[stage] || `[Reasoner] Processing ${stage}: ${context}`;
   }
   // If a real client were available, you'd call it here.
-  return `[StrataMind] ${stage}: ${context}`;
+  return `[Reasoner] ${stage}: ${context}`;
 };
 
 const generateCleanupReport = async (stats) => {
   if (!process.env.GEMINI_API_KEY) {
-    return `# Antigravity Console - Backend Audit Report\nAgent: StrataMind\nTimestamp: ${new Date().toISOString()}\nFiles Removed: ${stats.filesRemoved}\nSpace Saved: ${stats.spaceSaved}`;
+    return `# Antigravity Console - Backend Audit Report\nAgent: Reasoner (neutralized)\nTimestamp: ${new Date().toISOString()}\nFiles Removed: ${stats.filesRemoved}\nSpace Saved: ${stats.spaceSaved}`;
   }
   return `Cleanup report: ${JSON.stringify(stats)}`;
 };
 
 const sendChatMessage = async (message) => {
-  if (!process.env.GEMINI_API_KEY) return `[StrataMind]: Received: "${message}".`;
-  return `[StrataMind][live] ${message}`;
+  if (!process.env.GEMINI_API_KEY) return `[Reasoner]: Received: "${message}".`;
+  return `[Reasoner][live] ${message}`;
 };
 
 const executeQuickScan = async (target) => {

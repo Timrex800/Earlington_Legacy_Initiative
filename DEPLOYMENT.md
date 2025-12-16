@@ -42,4 +42,8 @@ The application uses the following environment variables. For local development,
 - `VITE_UMAMI_SITE_ID`: (Optional) Umami site ID
 - `VITE_DONATION_WEBHOOK_URL`: (Optional) URL for the donation intent webhook
 
+- `VITE_REASONER_ENABLED`: (Optional) `true` to enable client Reasoner features (default: `true` when present)
+- `VITE_REASONER_DEFAULT_MODEL`: (Optional) Default AI model name for the Reasoner (e.g. `claude-haiku-4.5`)
+- `VITE_REASONER_ENDPOINT`: (Optional) Backend endpoint for Reasoner requests (e.g. `/.netlify/functions/reasoner`)
+
 **Note:** Do not commit `.env` files containing secrets to the repository.

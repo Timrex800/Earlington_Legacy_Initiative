@@ -10,22 +10,14 @@
   },
   "features": {
     "reasoner": true,
+    "defaultAIEngine": "claude-haiku-4.5",
     "uploadUI": true,
     "htaccessSupport": false
   },
   "metadata": {
     "owner": "Timrex800",
     "repo": "Earlington_Legacy_Initiative"
-  }
-  ,
-  "agents": [
-    {
-      "id": "stratamind-reasoner",
-      "name": "StrataMind Reasoner",
-      "path": "agents/stratamind-reasoner",
-      "enabled": true,
-      "description": "Backend reasoning agent for repository cleanup and Antigravity Console operations."
-    }
-  ]
+  },
+  "agents": []
 }
 

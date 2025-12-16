@@ -1,29 +1,4 @@
 {
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ]
-    }
-  ],
-  "hosting": {
-    "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "redirects": [
-      {
-        "source": "**",
-        "destination": "https://earlingtonlegacy.org.za",
-        "type": 301
-      }
-    ]
-  }
+  "_note": "FIREBASE CONFIG MARKED FOR DELETION",
+  "message": "This firebase.json has been marked for removal during AI/Firebase decommissioning. Delete this file if you intend to fully remove Firebase hosting and functions."
 }

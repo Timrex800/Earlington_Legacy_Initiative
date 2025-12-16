@@ -1,4 +1,2 @@
-import React from 'react';
-
-// Stratamind/Reasoner chat UI removed. Keep a no-op component to avoid import errors.
-export const ReasonerPanel: React.FC = () => null;
+// Reasoner UI removed from project. File intentionally left blank to avoid accidental imports.
+export default undefined;
