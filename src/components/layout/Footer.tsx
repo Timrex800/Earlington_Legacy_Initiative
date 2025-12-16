@@ -17,7 +17,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <img
-              src="https://res.cloudinary.com/drj03twbh/image/upload/q_auto:best/ELI_Silver_Transparent_zch6yh.jpg"
+              src="https://res.cloudinary.com/drj03twbh/image/upload/v1765921600/ELI_Silver_Transparent_zch6yh.png"
               alt="Earlington Legacy Initiative"
               className="h-28 w-auto mb-4 md:h-32 lg:h-36"
               onError={(e) => {
